@@ -23,9 +23,18 @@
     <header class="site-header" id="siteHeader">
         <div class="hdr-wrap">
 
-            <a class="hdr-logo" href="{% url 'home' %}" aria-label="Reload page" onclick="location.reload(); return false;">
+            <a class="hdr-logo" href="{% url 'home' %}" aria-label="Reload page"
+                onclick="location.reload(); return false;">
                 JUSCON
             </a>
+
+
+
+            <button class="hdr-burger" id="hdrBurger" aria-label="Open menu" aria-controls="mnavModal"
+                aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
 
             <nav class="hdr-nav" aria-label="Primary">
                 <a href="#">Solutions</a>
@@ -45,11 +54,31 @@
                 <a class="cta" a href="/contact">Contact Sales</a>
             </div>
 
+
+
         </div>
     </header>
 
-{% block content %}
-{% endblock content %}
+
+    <div class="mnav-under" id="mnavUnder" hidden></div>
+    <div class="mnav-modal" id="mnavModal" role="dialog" aria-modal="true" aria-labelledby="mnavTitle" hidden>
+        <div class="mnav-card">
+            <div class="mnav-head">
+                <h2 id="mnavTitle">Menu</h2>
+                <button class="mnav-close" id="mnavClose" aria-label="Close menu">✕</button>
+            </div>
+            <nav class="mnav-list" aria-label="Mobile">
+                <a href="#" class="mnav-link">Solutions</a>
+                <a href="#" class="mnav-link">Products</a>
+                <a href="#" class="mnav-link">Company</a>
+            </nav>
+            <a href="/contact" class="mnav-cta">Contact Sales</a>
+        </div>
+    </div>
+
+
+    {% block content %}
+    {% endblock content %}
 
     <footer class="site-footer">
         <p>©2025 Juscon Transport LTD. All Rights Reserved</p>
