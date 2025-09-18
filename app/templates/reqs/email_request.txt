@@ -1,9 +1,0 @@
-Заявка с {{ site }}
-Дата/время: {{ when|date:"d.m.Y H:i" }}
-
-Имя: {{ obj.name }}
-Телефон: {{ obj.phone }}
-E-mail: {{ obj.email|default:"—" }}
-
-Сообщение:
-{{ obj.message|default:"—" }}

@@ -1,0 +1,8 @@
+:root {
+    --font-family-text: 'Manrope', sans-serif;
+   
+    --text-color_1lev: #0f0f0f;
+    --text-color_2lev: #3f3f3f;
+
+    --cont-width-max: 1200px;
+}
