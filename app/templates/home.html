@@ -1,59 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juscon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;400;700;300;100&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.cdnfonts.com/css/royal-crescent" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/variables.css">
-</head>
+{% extends '_base.html' %}
+{% load static %}
 
 
-
-
-<body>
-
-
-    <header class="site-header" id="siteHeader">
-        <div class="hdr-wrap">
-
-            <a class="hdr-logo" href="/" aria-label="Reload page" onclick="location.reload(); return false;">
-                JUSCON
-            </a>
-
-            <nav class="hdr-nav" aria-label="Primary">
-                <a href="#">Solutions</a>
-                <a href="#">Products</a>
-                <a href="#">Support</a>
-                <a href="#">News</a>
-                <a href="#">Company</a>
-            </nav>
-
-            <div class="hdr-actions">
-                <button class="icon-btn" aria-label="Search">
-                    <img src="/static/image/1.png" alt="Search icon">
-                </button>
-
-                <button class="icon-btn" aria-label="Language">
-                    <img src="/static/image/2.png" alt="Language icon">
-                </button>
-
-                <a class="cta" a href="/contact">Contact Sales</a>
-            </div>
-
-        </div>
-    </header>
-
-
-
-
+{% block content %}
 
     <section class="hero">
-        <img class="hero-bg" src="/static/image/p.png" alt="" aria-hidden="true">
+        <img class="hero-bg" src="{% static 'image/p.png' %}" alt="" aria-hidden="true">
         <div class="hero-shade"></div>
 
         <div class="hero-content">
@@ -62,17 +14,17 @@
             <div class="hero-features">
 
                 <div class="hero-feature">
-                    <img class="hero-feature__icon" src="/static/image/f_3.png" alt="Faster Delivery">
+                    <img class="hero-feature__icon" src="{% static 'image/f_3.png' %}" alt="Faster Delivery">
                     <p>Innovate Boldly</p>
                 </div>
 
                 <div class="hero-feature">
-                    <img class="hero-feature__icon" src="/static/image/f_2.png" alt="Seamless Integration">
+                    <img class="hero-feature__icon" src="{% static 'image/f_2.png' %}" alt="Seamless Integration">
                     <p>Simplify Complexity</p>
                 </div>
 
                 <div class="hero-feature">
-                    <img class="hero-feature__icon" src="/static/image/f_1.png" alt="Scalable Architecture">
+                    <img class="hero-feature__icon" src="{% static 'image/f_1.png' %}" alt="Scalable Architecture">
                     <p>Deliver Faster</p>
                 </div>
 
@@ -95,7 +47,7 @@
         <div class="cards">
 
             <a href="/ai-optimization" class="card">
-                <img src="/static/image/silicon-design-verification-368x434.webp" alt="AI-Powered Optimization">
+                <img src="{% static 'image/silicon-design-verification-368x434.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>Advanced Silicon Design & Verification</h3>
                     <p class="card-desc">Leading Provider of Electronic Design Automation Services & Solutions</p>
@@ -103,7 +55,7 @@
             </a>
 
             <a href="/ai-optimization" class="card">
-                <img src="/static/image/silicon-ip-368x434.webp" alt="AI-Powered Optimization">
+                <img src="{% static 'image/silicon-ip-368x434.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>IP Solutions</h3>
                     <p class="card-desc">Best practice in Interface, Foundation, and Physical IP</p>
@@ -111,7 +63,7 @@
             </a>
 
             <a href="/ai-optimization" class="card">
-                <img src="/static/image/system-design-368x434.webp" alt="AI-Powered Optimization">
+                <img src="{% static 'image/system-design-368x434.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>Verification & Validation</h3>
                     <p class="card-desc">Top-Tier Hardware-Assisted Verification and Virtualization Solutions</p>
@@ -119,7 +71,7 @@
             </a>
 
             <a href="/ai-optimization" class="card">
-                <img src="/static/image/ai-tech-1.webp" alt="AI-Powered Optimization">
+                <img src="{% static 'image/ai-tech-1.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>AI-Driven Optimization</h3>
                     <p class="card-desc">Setting the Standard in AI-Enhanced Workflow Efficiency</p>
@@ -155,7 +107,7 @@
             <div class="duo-grid">
 
                 <a class="duo-card" href="/industry/ai-chip/">
-                    <div class="duo-ico"><img src="/static/image/l_1.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_1.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Intelligent Silicon Solutions</h4>
                         <p>Unlock next-gen AI hardware performance with precision silicon design.</p>
@@ -163,7 +115,7 @@
                 </a>
 
                 <a class="duo-card" href="/tech/ai/">
-                    <div class="duo-ico"><img src="/static/image/l_6.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_6.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>AI-Driven Silicon</h4>
                         <p>Boost silicon performance and drive the future of intelligent innovation.</p>
@@ -171,7 +123,7 @@
                 </a>
 
                 <a class="duo-card" href="/industry/hpc-dc/">
-                    <div class="duo-ico"><img src="/static/image/l_2.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_2.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Data Center Acceleration</h4>
                         <p>Supercharge compute, networking, and edge infrastructure for tomorrow’s data demands.
@@ -180,7 +132,7 @@
                 </a>
 
                 <a class="duo-card" href="/tech/multi-die/">
-                    <div class="duo-ico"><img src="/static/image/l_7.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_7.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Heterogeneous Multi-Chip Integration</h4>
                         <p>Seamless, high-speed solutions for advanced multi-die architectures.</p>
@@ -188,7 +140,7 @@
                 </a>
 
                 <a class="duo-card" href="/industry/mobile-5g/">
-                    <div class="duo-ico"><img src="/static/image/l_3.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_3.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Next-Gen Connectivity</h4>
                         <p>Expand mobile and 5G potential with leading-edge security and bandwidth.</p>
@@ -196,7 +148,7 @@
                 </a>
 
                 <a class="duo-card" href="/tech/energy/">
-                    <div class="duo-ico"><img src="/static/image/l_8.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_8.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Green Design Engineering</h4>
                         <p>Comprehensive, low-power approaches to energy-efficient design and verification.</p>
@@ -204,7 +156,7 @@
                 </a>
 
                 <a class="duo-card" href="/industry/automotive/">
-                    <div class="duo-ico"><img src="/static/image/l_4.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_4.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Smart Mobility Systems</h4>
                         <p>Transform automotive electronics with integrated software-to-silicon innovation.</p>
@@ -212,7 +164,7 @@
                 </a>
 
                 <a class="duo-card" href="/industry/aero-gov/">
-                    <div class="duo-ico"><img src="/static/image/l_9.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_9.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Advanced Memory Solutions</h4>
                         <p>Industry-leading, end-to-end memory development flows for cutting-edge hardware.</p>
@@ -220,7 +172,7 @@
                 </a>
 
                 <a class="duo-card" href="/tech/memory/">
-                    <div class="duo-ico"><img src="/static/image/l_5.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_5.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Mission-Critical Technologies</h4>
                         <p>Advance aerospace and government projects through automated, high-reliability development.
@@ -230,7 +182,7 @@
 
 
                 <a class="duo-card" href="/tech/cloud/">
-                    <div class="duo-ico"><img src="/static/image/l_10.png" alt=""></div>
+                    <div class="duo-ico"><img src="{% static 'image/l_10.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Cloud-Ready Development</h4>
                         <p>Secure and streamlined frameworks to accelerate cloud-powered innovation.</p>
@@ -256,13 +208,4 @@
 
 
 
-    <footer class="site-footer">
-        <p>©2025 Juscon, Inc. All Rights Reserved</p>
-    </footer>
-
-
-    <script src="/static/js/script.js"></script>
-
-</body>
-
-</html>
+{% endblock content %}
