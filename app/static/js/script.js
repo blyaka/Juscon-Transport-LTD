@@ -105,79 +105,62 @@ document.querySelectorAll('.hdr-nav a').forEach(a => {
 
 
 (function () {
-    const form = document.getElementById('contactForm');
     const phone = document.getElementById('phone');
-    const email = document.getElementById('email');
 
-    // ===== Маска телефона =====
-    const formatPhone = (digits) => {
-        digits = digits.replace(/\D/g, '');
-
+    // Форматирование в +7 9xx xxx xx xx
+    function formatPhoneFromDigits(digits) {
+        if (!digits) return '';
+        // нормализуем старт
         if (digits[0] === '8') digits = '7' + digits.slice(1);
         if (digits[0] === '9') digits = '7' + digits;
-        if (digits[0] !== '7') digits = '7' + (digits.slice(0, 10) || '');
+        if (digits[0] !== '7') digits = '7' + digits.slice(0, 10);
+        digits = digits.replace(/\D/g, '').slice(0, 11);
 
-        digits = digits.slice(0, 11);
+        const p = (digits + '___________').slice(0, 11).split('');
+        return (`+7 ${p[1]}${p[2]}${p[3]} ${p[4]}${p[5]}${p[6]} ${p[7]}${p[8]} ${p[9]}${p[10]}`).trim();
+    }
 
-        const p = digits.padEnd(11, '_').split('');
-        return `+7 ${p[1]}${p[2]}${p[3]} ${p[4]}${p[5]}${p[6]} ${p[7]}${p[8]} ${p[9]}${p[10]}`.replace(/_/g, '');
-    };
+    // Ставим формат, сохраняя каретку (чтобы можно было удалять в середине)
+    function applyMaskPreserveCaret(e) {
+        const start = phone.selectionStart;
+        const before = phone.value.slice(0, start);
+        const digitsBefore = before.replace(/\D/g, '').length;
 
-    const placeCaretToEnd = (el) => {
-        const len = el.value.length;
-        el.setSelectionRange(len, len);
-    };
+        const digitsAll = phone.value.replace(/\D/g, '');
+        const formatted = formatPhoneFromDigits(digitsAll);
 
-    const applyMask = () => {
-        const raw = phone.value;
-        const masked = formatPhone(raw);
-        phone.value = masked;
-        setTimeout(() => placeCaretToEnd(phone), 0);
-    };
+        phone.value = formatted;
 
-    // === Изменения здесь ===
-    // при фокусе: если пусто — вставить +7 
-    phone.addEventListener('focus', () => {
-        if (!phone.value.trim()) {
-            phone.value = '+7 ';
-            placeCaretToEnd(phone);
+        // Восстановим позицию каретки относительно количества цифр слева
+        let i = 0, count = 0;
+        while (i < phone.value.length && count < digitsBefore) {
+            if (/\d/.test(phone.value[i])) count++;
+            i++;
         }
-    });
+        phone.setSelectionRange(i, i);
+    }
 
-    ['input', 'paste'].forEach(evt => {
-        phone.addEventListener(evt, applyMask, { passive: true });
-    });
+    // Разрешаем полноценное стирание
+    phone.addEventListener('keydown', (e) => {
+        // Ctrl+A — ок
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'a' || e.key === 'A')) return;
 
-    // при блюре: если осталось только "+7" без цифр — очищаем поле
-    phone.addEventListener('blur', () => {
-        if (phone.value.trim() === '+7') {
-            phone.value = '';
-        }
-    });
-
-    // ===== Email =====
-    email.addEventListener('input', () => {
-        if (email.value.includes('@')) {
-            email.setCustomValidity('');
-        } else {
-            email.setCustomValidity('Email должен содержать символ @');
-        }
-    });
-
-    // ===== Сабмит =====
-    form.addEventListener('submit', (e) => {
-        applyMask();
-
+        // Полное очищение по Backspace/Delete, если осталась только «7» (или совсем мало цифр)
         const digits = phone.value.replace(/\D/g, '');
-        if (digits.length !== 11) {
-            phone.setCustomValidity('Введите телефон полностью');
-        } else {
-            phone.setCustomValidity('');
-        }
-
-        if (!form.checkValidity()) {
+        if ((e.key === 'Backspace' || e.key === 'Delete') && digits.length <= 1) {
             e.preventDefault();
-            form.reportValidity();
+            phone.value = '';
+            return;
+        }
+    });
+
+    // Маска при вводе/вставке
+    phone.addEventListener('input', applyMaskPreserveCaret);
+
+    // Не навязываем +7 при фокусе. На блюре — если остался только «+7» → чистим.
+    phone.addEventListener('blur', () => {
+        if (phone.value.trim() === '+7' || phone.value.replace(/\D/g, '').length <= 1) {
+            phone.value = '';
         }
     });
 })();
