@@ -1,0 +1,274 @@
+.feedback-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 45px;
+}
+
+.feedback-form {
+    font-family: var(--font-family-text);
+    width: 450px;
+    padding: 30px 50px;
+    background: rgba(242, 221, 255, 0.058);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.541);
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.feedback-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form__group {
+    position: relative;
+    padding: 20px 0 8px;
+    width: 100%;
+}
+
+.form__field {
+    font-family: var(--font-family-text);
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #a1a1a1;
+    outline: 0;
+    font-size: 16px;
+    color: #000000;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 15px;
+    cursor: text;
+    top: 20px;
+    font-family: var(--font-family-text);
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 15px;
+    color: #12001f;
+    pointer-events: none;
+    font-family: var(--font-family-text);
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 13px;
+    color: #12001f;
+    font-weight: 600;
+    font-family: var(--font-family-text);
+}
+
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+.form-consent {
+    margin: 12px 0 16px;
+}
+
+.consent-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #141313;
+    font-family: var(--font-family-text);
+    font-size: 17px;
+}
+
+.consent-check input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.consent-check svg {
+    overflow: visible;
+    display: block;
+}
+
+.consent-path {
+    fill: none;
+    stroke: #080808;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, transform 0.25s ease;
+    stroke-dasharray: 0 0 240 9999999;
+    stroke-dashoffset: 1;
+    transform: scale(-1, 1);
+    transform-origin: center;
+    animation: consent-hi 0.5s;
+}
+
+.consent-check input:checked~svg .consent-path {
+    stroke-dasharray: 0 262 70 9999999;
+    transform: scale(1, 1);
+    animation: none;
+}
+
+@keyframes consent-hi {
+    0% {
+        stroke-dashoffset: 20;
+    }
+
+    100% {
+        stroke-dashoffset: 1;
+    }
+}
+
+.form__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cw-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+
+    padding: 8px 30px;
+    border-radius: 100px;
+    background: #9f74d7;
+    color: #000000;
+    border: 1px solid transparent;
+    transition: transform .2s, background .2s;
+}
+
+.cw-submit:hover {
+    background: #af78edfa;
+}
+
+.cw-submit:active {
+    transform: scale(0.97);
+}
+
+.cw-submit>svg {
+    width: 34px;
+    height: 34px;
+    margin-left: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cw-submit:hover svg {
+    transform: translateX(5px);
+}
+
+
+.contact-hero {
+    position: relative;
+    isolation: isolate;
+    padding: clamp(140px, 12vh, 160px) 0 90px;
+    overflow: hidden;
+}
+
+
+.contact-hero .feedback-form-wrapper {
+    min-height: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-blob {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(135deg, #301375, #ffffff, #2342cb);
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 60% 40%;
+    }
+
+    100% {
+        background-position: 50% 50%;
+    }
+}
+
+
+
+
+
+/* Контейнер даёт перспективу */
+.fx-tilt {
+    perspective: 1000px;
+}
+
+/* Карточка-форма: плавные трансформации */
+.feedback-form {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .18s ease, box-shadow .18s ease;
+    will-change: transform;
+}
+
+/* Лёгкая подсветка «пятном» следует за курсором */
+.feedback-form::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .18s ease;
+    background:
+        radial-gradient(60% 40% at var(--mx, 50%) var(--my, 40%),
+            rgba(255, 255, 255, .18), rgba(255, 255, 255, 0) 60%);
+    /* можно усилить glow: поменяй .18 на .25 */
+}
+
+.fx-tilt:hover .feedback-form {
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .25);
+}
+
+.fx-tilt:hover .feedback-form::after {
+    opacity: 1;
+}
+
+/* уважение к пользователю: без анимаций, если отключены в системе */
+@media (prefers-reduced-motion: reduce) {
+
+    .feedback-form,
+    .feedback-form::after {
+        transition: none !important;
+    }
+}

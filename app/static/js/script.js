@@ -70,3 +70,63 @@ document.querySelectorAll('.hdr-nav a').forEach(a => {
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && burger.classList.contains('is-open')) closeMenu(); });
     modal.addEventListener('click', e => { const a = e.target.closest('a'); if (a) closeMenu(); });
 })();
+
+
+
+function fit(el) {
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+}
+
+document.addEventListener('input', (e) => {
+    if (e.target.classList.contains('auto-resize')) fit(e.target);
+});
+
+// На всякий — подогнать высоту, если есть предзаполненный текст
+document.querySelectorAll('.auto-resize').forEach(fit);
+
+
+
+
+
+
+
+(function () {
+    const wrap = document.querySelector('.fx-tilt');
+    if (!wrap) return;
+    const card = wrap.querySelector('.feedback-form');
+
+    const MAX = 8; // градусы наклона (мягко)
+    let rafId = null, tx = 0, ty = 0;
+
+    function onMove(e) {
+        const r = wrap.getBoundingClientRect();
+        const cx = (e.clientX - r.left) / r.width;   // 0..1
+        const cy = (e.clientY - r.top) / r.height;   // 0..1
+        const rotY = (cx - 0.5) * (MAX * 2);         // -MAX..MAX
+        const rotX = (0.5 - cy) * (MAX * 2);
+
+        tx = rotX; ty = rotY;
+        card.style.setProperty('--mx', (cx * 100) + '%');
+        card.style.setProperty('--my', (cy * 100) + '%');
+
+        if (!rafId) rafId = requestAnimationFrame(apply);
+    }
+
+    function apply() {
+        rafId = null;
+        card.style.transform = `rotateX(${tx}deg) rotateY(${ty}deg) translateZ(4px)`;
+    }
+
+    function reset() {
+        card.style.transform = 'translateZ(0)';
+        card.style.removeProperty('--mx');
+        card.style.removeProperty('--my');
+    }
+
+    wrap.addEventListener('mousemove', onMove);
+    wrap.addEventListener('mouseleave', reset);
+    // на тачах отключаем эффекты
+    wrap.addEventListener('touchstart', () => wrap.classList.add('no-tilt'), { passive: true });
+})();
+

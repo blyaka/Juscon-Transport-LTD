@@ -1,8 +1,14 @@
-html,
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .site-header {
@@ -13,6 +19,7 @@ body {
     z-index: 1000;
     background: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .hdr-wrap {
@@ -22,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 150px;
 }
 
 .hdr-logo {
@@ -59,7 +66,6 @@ body {
 }
 
 .hdr-nav {
-    margin-left: 60px;
     display: flex;
     gap: 28px;
 }
@@ -802,11 +808,6 @@ body {
     overflow: hidden;
 }
 
-
-html,
-body {
-    overflow-x: hidden;
-}
 
 
 
