@@ -5,98 +5,105 @@
 {% block content %}
 
 
-
 <section class="contact-hero">
 
-    <svg class="contact-blob" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
+    <div class="contact-container">
 
-            <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#3a0ca3" />
-                <stop offset="50%" stop-color="#7209b7" />
-                <stop offset="100%" stop-color="#4361ee" />
+        <div class="contact-text">
+            <h2>Would you like to learn more about our solutions or discuss the project?</h2>
+            <p>Leave your contacts and we will help you find the best solution</p>
+        </div>
 
-                <animate attributeName="x1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
-                <animate attributeName="y1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
-                <animate attributeName="x2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
-                <animate attributeName="y2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
-            </linearGradient>
-        </defs>
+        <svg class="contact-blob" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
 
+            <defs>
+                <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3a0ca3" />
+                    <stop offset="50%" stop-color="#7209b7" />
+                    <stop offset="100%" stop-color="#4361ee" />
 
-        <path fill="url(#blobGrad)" d="M0,0 L1200,0 L1200,700
-         C980,690 860,650 800,560
-         C740,470 700,360 590,330
-         C470,300 360,330 250,300
-         C150,270 80,210 0,150 Z" />
-    </svg>
+                    <animate attributeName="x1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                    <animate attributeName="y1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                    <animate attributeName="x2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+                    <animate attributeName="y2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+                </linearGradient>
+            </defs>
 
-
-    <div class="feedback-form-wrapper">
-        <form class="feedback-form">
-            <h2>CONTACT US</h2>
-
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Name" required="">
-                <label for="name" class="form__label">Name</label>
-            </div>
-
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Name" required="">
-                <label for="name" class="form__label">Company</label>
-            </div>
-
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Name" required="">
-                <label for="name" class="form__label">Phone</label>
-            </div>
-
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Name" required="">
-                <label for="name" class="form__label">Email</label>
-            </div>
-
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Name" required="">
-                <label for="name" class="form__label">Comment</label>
-            </div>
-
-            <div class="form-consent">
-                <label class="consent-check">
-                    <input type="checkbox" name="consent" id="consent" required>
-                    <svg viewBox="0 0 64 64" width="20" height="20" aria-hidden="true">
-                        <path
-                            d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
-                            pathLength="575.0541381835938" class="consent-path"></path>
-                    </svg>
-                    <span>I agree to the processing of personal data</span>
-                </label>
-            </div>
+            <path fill="url(#blobGrad)"
+                d="           M 0,0            H 1200            V 700            C 1000,680 860,620 760,540            C 640,440 500,440 380,480            C 260,520 120,480 0,150            Z" />
+        
+        </svg>
 
 
 
-            <div class="form__actions">
-                <button type="submit" class="cw-submit">
-                    <span>Send</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true">
-                        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
-                        <path fill="black"
-                            d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
-                        </path>
-                    </svg>
-                </button>
-            </div>
+
+        <div class="feedback-form-wrapper">
 
 
+            <form class="feedback-form">
+                <h2>CONTACT US</h2>
 
-        </form>
+                <div class="form__group field">
+                    <input id="name" name="name" type="text" class="form__field" placeholder="Name" required>
+                    <label for="name" class="form__label">Name</label>
+                </div>
+
+                <div class="form__group field">
+                    <input id="company" name="company" type="text" class="form__field" placeholder="Company" required>
+                    <label for="company" class="form__label">Company</label>
+                </div>
+
+                <div class="form__group field">
+                    <input id="phone" name="phone" type="tel" class="form__field" placeholder="+7 900 000 00 00"
+                        inputmode="tel" pattern="^\+7 \d{3} \d{3} \d{2} \d{2}$" required>
+                    <label for="phone" class="form__label">Phone</label>
+                </div>
+
+                <div class="form__group field">
+                    <input id="email" name="email" type="email" class="form__field" placeholder="you@mail.com" required>
+                    <label for="email" class="form__label">Email</label>
+                </div>
+
+                <div class="form__group field">
+                    <textarea id="comment" name="comment" class="form__field form__field--ta" placeholder="Comment"
+                        rows="1"></textarea>
+                    <label for="comment" class="form__label">Comment</label>
+                </div>
+
+                <div class="form-consent">
+                    <label class="consent-check">
+                        <input type="checkbox" name="consent" id="consent" required>
+                        <svg viewBox="0 0 64 64" width="20" height="20" aria-hidden="true">
+                            <path
+                                d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                                pathLength="575.0541381835938" class="consent-path"></path>
+                        </svg>
+                        <span>
+                            I agree with the <a href="/privacy-policy" target="_blank"><strong>privacy
+                                    policy</strong></a>
+                        </span>
+                    </label>
+                </div>
+
+
+                <div class="form__actions">
+                    <button type="submit" class="cw-submit">
+                        <span>Send</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true">
+                            <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                            <path fill="black"
+                                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+        </div>
     </div>
-
 </section>
 
 
-
-<script src="{% static 'js/script.js' %}"></script>
 
 
 {% endblock content %}

@@ -73,17 +73,111 @@ document.querySelectorAll('.hdr-nav a').forEach(a => {
 
 
 
-function fit(el) {
-    el.style.height = 'auto';
-    el.style.height = el.scrollHeight + 'px';
-}
 
-document.addEventListener('input', (e) => {
-    if (e.target.classList.contains('auto-resize')) fit(e.target);
-});
+(function () {
+    const ta = document.getElementById('comment');
+    if (!ta) return;
 
-// На всякий — подогнать высоту, если есть предзаполненный текст
-document.querySelectorAll('.auto-resize').forEach(fit);
+    // фиксируем базовую высоту (как у инпута) один раз
+    const setBase = () => {
+        // принудительно выставим старт
+        ta.style.height = '32px';
+        // запомним базовое значение по факту рендера
+        ta.dataset.baseHeight = ta.scrollHeight; // это будет ≈ одной строке
+        ta.style.height = ta.dataset.baseHeight + 'px';
+    };
+
+    const autoresize = () => {
+        const base = parseInt(ta.dataset.baseHeight || '32', 10);
+        ta.style.height = 'auto';
+        const h = Math.max(ta.scrollHeight, base);
+        ta.style.height = h + 'px';
+    };
+
+    // на загрузке — фиксируем базу и выравниваем (учтёт автозаполнение)
+    window.addEventListener('load', () => { setBase(); autoresize(); }, { once: true });
+
+    // при вводе/вставке — растим, но не меньше базы
+    ta.addEventListener('input', autoresize, { passive: true });
+    ta.addEventListener('paste', () => requestAnimationFrame(autoresize));
+})();
 
 
 
+(function () {
+    const form = document.getElementById('contactForm');
+    const phone = document.getElementById('phone');
+    const email = document.getElementById('email');
+
+    // ===== Маска телефона =====
+    const formatPhone = (digits) => {
+        digits = digits.replace(/\D/g, '');
+
+        if (digits[0] === '8') digits = '7' + digits.slice(1);
+        if (digits[0] === '9') digits = '7' + digits;
+        if (digits[0] !== '7') digits = '7' + (digits.slice(0, 10) || '');
+
+        digits = digits.slice(0, 11);
+
+        const p = digits.padEnd(11, '_').split('');
+        return `+7 ${p[1]}${p[2]}${p[3]} ${p[4]}${p[5]}${p[6]} ${p[7]}${p[8]} ${p[9]}${p[10]}`.replace(/_/g, '');
+    };
+
+    const placeCaretToEnd = (el) => {
+        const len = el.value.length;
+        el.setSelectionRange(len, len);
+    };
+
+    const applyMask = () => {
+        const raw = phone.value;
+        const masked = formatPhone(raw);
+        phone.value = masked;
+        setTimeout(() => placeCaretToEnd(phone), 0);
+    };
+
+    // === Изменения здесь ===
+    // при фокусе: если пусто — вставить +7 
+    phone.addEventListener('focus', () => {
+        if (!phone.value.trim()) {
+            phone.value = '+7 ';
+            placeCaretToEnd(phone);
+        }
+    });
+
+    ['input', 'paste'].forEach(evt => {
+        phone.addEventListener(evt, applyMask, { passive: true });
+    });
+
+    // при блюре: если осталось только "+7" без цифр — очищаем поле
+    phone.addEventListener('blur', () => {
+        if (phone.value.trim() === '+7') {
+            phone.value = '';
+        }
+    });
+
+    // ===== Email =====
+    email.addEventListener('input', () => {
+        if (email.value.includes('@')) {
+            email.setCustomValidity('');
+        } else {
+            email.setCustomValidity('Email должен содержать символ @');
+        }
+    });
+
+    // ===== Сабмит =====
+    form.addEventListener('submit', (e) => {
+        applyMask();
+
+        const digits = phone.value.replace(/\D/g, '');
+        if (digits.length !== 11) {
+            phone.setCustomValidity('Введите телефон полностью');
+        } else {
+            phone.setCustomValidity('');
+        }
+
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            form.reportValidity();
+        }
+    });
+})();
