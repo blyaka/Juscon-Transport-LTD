@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     'pages',
+    'reqs',
 ]
 
 
@@ -137,3 +138,35 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
+
+
+
+
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+DEFAULT_FROM_EMAIL = os.getenv('EMAIL_FROM', EMAIL_HOST_USER)
+
+FEEDBACK_FALLBACK_TO = os.getenv('FEEDBACK_FALLBACK_TO', EMAIL_HOST_USER)
+
+REDIS_URL = os.getenv('REDIS_URL', 'redis://redis:6379/1')
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": REDIS_URL,
+        "OPTIONS": {
+            "health_check_interval": 30,
+        },
+        "TIMEOUT": 300,
+    }
+}
+
+RATE_SHORT = int(os.getenv('RATE_SHORT', 30))
+RATE_SHORT_MAX = int(os.getenv('RATE_SHORT_MAX', 3))
+RATE_HOUR = int(os.getenv('RATE_HOUR', 3600))
+RATE_HOUR_MAX = int(os.getenv('RATE_HOUR_MAX', 20))
+FORM_MIN_SECONDS = int(os.getenv('FORM_MIN_SECONDS', 3))
+FORM_MAX_SECONDS = int(os.getenv('FORM_MAX_SECONDS', 3600))
