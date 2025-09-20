@@ -1,4 +1,4 @@
-.background {
+/* .background {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -9,7 +9,7 @@
 }
 
 
-/* html,
+html,
 body {
     height: 100%;
     margin: 0;
@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
- */
+
 
 .page-wrapper {
     flex: 1;
@@ -60,11 +60,11 @@ body {
     border-radius: 999px;
 
     background: rgba(215, 190, 255, 0.14);
-    /* полупрозрачная */
+
     border: 1px solid rgba(255, 255, 255, .35);
     box-shadow: 0 8px 26px rgba(102, 51, 238, .18), inset 0 1px 0 rgba(255, 255, 255, .35);
     backdrop-filter: saturate(140%) blur(6px);
-    /* стеклянность */
+
 
 
     font-size: 17px;
@@ -95,7 +95,6 @@ body {
 
 
 
-/* Полупрозрачный прямоугольник */
 .info-block {
     min-width: 1000px;  
     padding: 28px;
@@ -109,7 +108,7 @@ body {
     min-height: 220px;
 }
 
-/* Содержимое */
+
 .info-panel {
     opacity: 0;
     transform: translateY(8px);
@@ -125,7 +124,7 @@ body {
     display: none;
 }
 
-/* Заголовки/текст */
+
 .info-block h3 {
     margin-top: 0;
     font: 700 20px/1.3 system-ui, sans-serif;
@@ -154,3 +153,4 @@ body {
   margin-bottom: 8px;
   line-height: 1.5;
 }
+ */
