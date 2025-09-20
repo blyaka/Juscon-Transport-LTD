@@ -37,11 +37,28 @@
 
         <div class="info-panel" id="panel-ai-optimization" hidden>
             <h3>AI Optimization Solutions</h3>
-            <p>Оптимизация моделей: quantization, pruning, профилирование.</p>
-            <ul>
-                <li>INT8/FP16 pipelines</li>
-                <li>Auto-scheduling на FPGA/GPU</li>
-                <li>Profiling & bottleneck analysis</li>
+
+            <h4>Key Directions:</h4>
+            <ul class="styled-list">
+                <li>Automated data analysis and workflow efficiency tools powered by machine learning and deep learning
+                </li>
+                <li>Intelligent forecasting, scenario modeling, and business process optimization</li>
+                <li>AI-based solutions for demand prediction, logistics routing, and resource allocation</li>
+                <li>Hyper-personalization technologies for marketing, sales, and customer engagement</li>
+                <li>AI-driven cybersecurity for proactive threat detection and risk management</li>
+                <li>Autonomous data-driven decision-making platforms</li>
+                <li>Tools for automating documentation and technical content creation (including code, analytics, and
+                    reporting)</li>
+                <li>Seamless integration of AI with existing BI and enterprise analytics systems</li>
+            </ul>
+
+            <h4>Benefits:</h4>
+            <ul class="styled-list">
+                <li>Significant cost and time savings due to process automation and reduced manual labor</li>
+                <li>Enhanced accuracy and speed of critical business decisions</li>
+                <li>Increased flexibility, adaptability, and scalability of operations</li>
+                <li>Improved customer satisfaction and retention through targeted personalization</li>
+                <li>Future-proof infrastructure supporting rapid adaptation to market and technology shifts</li>
             </ul>
         </div>
 
@@ -55,34 +72,35 @@
             </ul>
         </div>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.hero-btn');
-            const panels = document.querySelectorAll('.info-panel');
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.hero-btn');
+        const panels = document.querySelectorAll('.info-panel');
 
-            function showPanel(id) {
-                buttons.forEach(btn => {
-                    btn.classList.toggle('is-active', btn.dataset.target === id);
-                });
-                panels.forEach(p => {
-                    const active = p.id === 'panel-' + id;
-                    p.hidden = !active;
-                    p.classList.toggle('is-active', active);
-                });
-            }
-
+        function showPanel(id) {
             buttons.forEach(btn => {
-                btn.addEventListener('click', e => {
-                    e.preventDefault();
-                    showPanel(btn.dataset.target);
-                });
+                btn.classList.toggle('is-active', btn.dataset.target === id);
             });
+            panels.forEach(p => {
+                const active = p.id === 'panel-' + id;
+                p.hidden = !active;
+                p.classList.toggle('is-active', active);
+            });
+        }
 
-            // старт по первой кнопке
-            showPanel('key-products');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                showPanel(btn.dataset.target);
+            });
         });
-    </script>
 
-    
-    {% endblock content %}
+        // старт по первой кнопке
+        showPanel('key-products');
+    });
+</script>
+
+
+{% endblock content %}
