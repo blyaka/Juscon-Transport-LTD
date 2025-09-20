@@ -4,103 +4,145 @@
 
 {% block content %}
 
+<div class="solutions-wrapper">
+    <div class="card-container">
 
-
-<div class="background"></div>
-
-<!-- КНОПКИ ПОД ХЕДДЕРОМ -->
-<div class="page-wrapper">
-    <!-- КНОПКИ -->
-    <main class="hero-cta" id="top">
-        <div class="cta-row" role="tablist" aria-label="Solutions tabs">
-            <a class="hero-btn is-active" role="tab" aria-selected="true" id="tab-key" href="#key-products"
-                data-target="key-products">Key products</a>
-
-            <a class="hero-btn" role="tab" aria-selected="false" id="tab-ai" href="#ai-optimization"
-                data-target="ai-optimization">AI Optimization Solutions</a>
-
-            <a class="hero-btn" role="tab" aria-selected="false" id="tab-vnv" href="#vnv" data-target="vnv">Custom
-                Verification &amp; Validation Solutions</a>
+        <div class="card2">
+            <div class="card-details">
+                <p class="text-title">Key products</p>
+            </div>
+            <button class="card-button" onclick="openPopup('popup_1')">Learn more</button>
         </div>
-    </main>
 
-    <div class="info-block">
-        <div class="info-panel is-active" id="panel-key-products">
-            <h3>Key products</h3>
-            <p>FPGA/ASIC IP cores, high-speed interfaces, protocol stacks, reference designs.</p>
+
+        <div class="card2">
+            <div class="card-details">
+                <p class="text-title">AI Optimization Solutions</p>
+            </div>
+            <button class="card-button" onclick="openPopup('popup_2')">Learn more</button>
+        </div>
+
+        <div class="card2">
+            <div class="card-details">
+                <p class="text-title">Custom Verification & Validation Solutions</p>
+            </div>
+            <button class="card-button" onclick="openPopup('popup_3')">Learn more</button>
+        </div>
+
+
+        <svg class="contact-blob2" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
+
+            <defs>
+                <linearGradient id="blobGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3a0ca3" />
+                    <stop offset="50%" stop-color="#7209b7" />
+                    <stop offset="100%" stop-color="#4361ee" />
+
+                    <animate attributeName="x1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                    <animate attributeName="y1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                    <animate attributeName="x2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+                    <animate attributeName="y2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+                </linearGradient>
+            </defs>
+
+            <path fill="url(#blobGrad2)"
+                d="M 1200,0 H 0 V 700 C 220,690 109.77385,490.08243 169.77385,400.08243 229.77385,310.08243 500,360 610,330 730,300 669.05363,112.18124 779.05363,82.18124 879.05363,52.18124 1120,210 1200,150 Z" />
+
+        </svg>
+
+    </div>
+</div>
+
+
+<div class="popup-overlay" id="popup_1">
+    <div class="popup">
+        <button class="close-button" onclick="closePopup('popup_1')">×</button>
+        <div class="popup-content">
+            <h2>Информация о продукте</h2>
             <ul>
-                <li>PCIe Gen4/5, Ethernet 100G/400G</li>
-                <li>DDR4/DDR5 контроллеры и PHY</li>
-                <li>Ready-to-deploy evaluation kits</li>
             </ul>
         </div>
+    </div>
+</div>
 
-        <div class="info-panel" id="panel-ai-optimization" hidden>
-            <h3>AI Optimization Solutions</h3>
 
-            <h4>Key Directions:</h4>
-            <ul class="styled-list">
-                <li>Automated data analysis and workflow efficiency tools powered by machine learning and deep learning
+<div class="popup-overlay" id="popup_2">
+    <div class="popup">
+        <button class="close-button" onclick="closePopup('popup_2')">×</button>
+        <div class="popup-content">
+            <h2>AI Optimization Solutions</h2>
+            <p>KEY DIRECTIONS:</p>
+            <ul>
+                <li>• Automated data analysis and workflow efficiency tools powered by machine learning and deep
+                    learning
                 </li>
-                <li>Intelligent forecasting, scenario modeling, and business process optimization</li>
-                <li>AI-based solutions for demand prediction, logistics routing, and resource allocation</li>
-                <li>Hyper-personalization technologies for marketing, sales, and customer engagement</li>
-                <li>AI-driven cybersecurity for proactive threat detection and risk management</li>
-                <li>Autonomous data-driven decision-making platforms</li>
-                <li>Tools for automating documentation and technical content creation (including code, analytics, and
-                    reporting)</li>
-                <li>Seamless integration of AI with existing BI and enterprise analytics systems</li>
+                <li>• Intelligent forecasting, scenario modeling, and business process optimization</li>
+                <li>• AI-based solutions for demand prediction, logistics routing, and resource allocation</li>
+                <li>• Hyper-personalization technologies for marketing, sales, and customer engagement</li>
+                <li>• AI-driven cybersecurity for proactive threat detection and risk management</li>
+                <li>• Autonomous data-driven decision-making platforms</li>
+                <li>• Tools for automating documentation and technical content creation (including code, analytics, and
+                    reporting) </li>
+                <li>• Seamless integration of AI with existing BI and enterprise analytics systems</li>
             </ul>
-
-            <h4>Benefits:</h4>
-            <ul class="styled-list">
-                <li>Significant cost and time savings due to process automation and reduced manual labor</li>
-                <li>Enhanced accuracy and speed of critical business decisions</li>
-                <li>Increased flexibility, adaptability, and scalability of operations</li>
-                <li>Improved customer satisfaction and retention through targeted personalization</li>
-                <li>Future-proof infrastructure supporting rapid adaptation to market and technology shifts</li>
+            <p>BENEFITS:</p>
+            <ul>
+                <li>• Significant cost and time savings due to process automation and reduced manual labor</li>
+                <li>• Enhanced accuracy and speed of critical business decisions</li>
+                <li>• Increased flexibility, adaptability, and scalability of operations</li>
+                <li>• Improved customer satisfaction and retention through targeted personalization</li>
+                <li>• Future-proof infrastructure supporting rapid adaptation to market and technology shifts</li>
             </ul>
         </div>
+    </div>
+</div>
 
-        <div class="info-panel" id="panel-vnv" hidden>
-            <h3>Custom Verification & Validation</h3>
-            <p>UVM testbenches, coverage-driven verification, CI regression.</p>
+
+<div class="popup-overlay" id="popup_3">
+    <div class="popup">
+        <button class="close-button" onclick="closePopup('popup_3')">×</button>
+        <div class="popup-content">
+            <h2>Custom Verification & Validation Solutions</h2>
+            <p>MAIN COMPONENTS:</p>
             <ul>
-                <li>SystemVerilog UVM, SVA</li>
-                <li>Emulation & prototyping flows</li>
-                <li>Compliance & interoperability labs</li>
+                <li>• AI-powered test automation for functional, regression, and load testing of hardware and software
+                    systems</li>
+                <li>• Scalable frameworks supporting both pre-silicon simulation and hardware-assisted verification</li>
+                <li>• User-defined validation metrics, customizable for enterprise workflows and industry requirements
+                <li>• Real-time monitoring, detailed logging, and analytics, for deep traceability and compliance
+                    reporting</li>
+                <li>• Comprehensive security validation, including penetration testing and cybersecurity threat
+                    detection
+                </li>
+                <li>• Model validation tools measuring accuracy, performance, and reproducibility across hardware and
+                    datasets</li>
+                <li>• Continuous integration with enterprise delivery pipelines and legacy verification environments
+                </li>
+                <li>• Application-specific extendability, including support for automotive, medical, telecom, financial,
+                    and cloud sectors</li>
+
+            </ul>
+            <p>VALUE DELIVERED:</p>
+            <ul>
+                <li>• Faster product launches, reduced cost overruns, and robust post-deployment stability</li>
+                <li>• Automated framework enables rapid scaling of projects from proof-of-concept to full production
+                </li>
+                <li>• Flexible architecture: microservices, APIs, and modular integration with existing infrastructure
+                </li>
+                <li>• Reliable certification</li>
             </ul>
         </div>
     </div>
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const buttons = document.querySelectorAll('.hero-btn');
-        const panels = document.querySelectorAll('.info-panel');
+    function openPopup(popupId) {
+        document.getElementById(popupId).style.display = 'flex';
+    }
 
-        function showPanel(id) {
-            buttons.forEach(btn => {
-                btn.classList.toggle('is-active', btn.dataset.target === id);
-            });
-            panels.forEach(p => {
-                const active = p.id === 'panel-' + id;
-                p.hidden = !active;
-                p.classList.toggle('is-active', active);
-            });
-        }
-
-        buttons.forEach(btn => {
-            btn.addEventListener('click', e => {
-                e.preventDefault();
-                showPanel(btn.dataset.target);
-            });
-        });
-
-        // старт по первой кнопке
-        showPanel('key-products');
-    });
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = 'none';
+    }
 </script>
-
 
 {% endblock content %}

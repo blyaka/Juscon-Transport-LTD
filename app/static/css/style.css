@@ -1,14 +1,18 @@
-html{
-    margin: 0;
-    padding: 0;
+html {
     height: 100%;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow-x: hidden;
+}
+
+#content {
+    flex: 1;
 }
 
 .site-header {
@@ -250,7 +254,6 @@ body {
     width: 42px;
     height: 42px;
     margin-bottom: 8px;
-    /* ближе к тексту */
     transition: transform .3s ease, filter .3s ease;
 }
 
@@ -625,6 +628,7 @@ body {
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: auto;
 }
 
 .site-footer p {
