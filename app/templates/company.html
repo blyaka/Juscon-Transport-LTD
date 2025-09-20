@@ -160,16 +160,16 @@
                 const data = await res.json().catch(() => ({}));
 
                 if (res.ok && data.ok) {
-                    setStatus('Спасибо! Заявка отправлена.', 'ok');
+                    setStatus('Thank you! Your request has been sent.', 'ok');
                     f.reset();
                     qs('#ts').value = Math.floor(Date.now()/1000);
                 } else {
                     applyFieldErrors(f, data.errors);
-                    const msg = (data.errors && data.errors.__all__) ? data.errors.__all__.join(' ') : 'Ошибка отправки. Проверьте поля.';
+                    const msg = (data.errors && data.errors.__all__) ? data.errors.__all__.join(' ') : 'Submission error. Check the fields.';
                     setStatus(msg, 'err');
                 }
                 } catch (err) {
-                setStatus('Сеть недоступна. Попробуйте позже.', 'err');
+                setStatus('The network is unavailable. Please try again later.', 'err');
                 } finally {
                 btn.disabled = false;
                 qs('.btn-text', btn).textContent = orig;
