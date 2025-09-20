@@ -40,8 +40,8 @@
 
             <nav class="hdr-nav" aria-label="Primary">
                 <a href="#">ABOUT US</a>
-                <a href="#">SOLUTIONS</a>
-                <a href="#">COMPANY</a>
+                <a href="{% url 'solutions' %}">SOLUTIONS</a>
+                <a href="{% url 'company' %}">COMPANY</a>
             </nav>
 
             <div class="hdr-actions">
@@ -74,7 +74,7 @@
                 <a href="#" class="mnav-link">Products</a>
                 <a href="#" class="mnav-link">Company</a>
             </nav>
-            <a href="/contact" class="mnav-cta">Contact Sales</a>
+            <a href="{% url 'company' %}" class="mnav-cta">Contact Sales</a>
         </div>
     </div>
 
