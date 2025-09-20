@@ -9,16 +9,80 @@
 <div class="background"></div>
 
 <!-- КНОПКИ ПОД ХЕДДЕРОМ -->
-<main class="hero-cta" role="main" id="top">
-    <div class="cta-row">
-        <a class="hero-btn" href="#key-products" aria-label="Go to Key products">Key products</a>
-        <a class="hero-btn" href="#ai-optimization" aria-label="Go to AI Optimization Solutions">
-            AI Optimization Solutions
-        </a>
-        <a class="hero-btn" href="#vnv" aria-label="Go to Custom Verification and Validation Solutions">
-            Custom Verification &amp; Validation Solutions
-        </a>
-    </div>
-</main>
+<div class="page-wrapper">
+    <!-- КНОПКИ -->
+    <main class="hero-cta" id="top">
+        <div class="cta-row" role="tablist" aria-label="Solutions tabs">
+            <a class="hero-btn is-active" role="tab" aria-selected="true" id="tab-key" href="#key-products"
+                data-target="key-products">Key products</a>
 
-{% endblock content %}
+            <a class="hero-btn" role="tab" aria-selected="false" id="tab-ai" href="#ai-optimization"
+                data-target="ai-optimization">AI Optimization Solutions</a>
+
+            <a class="hero-btn" role="tab" aria-selected="false" id="tab-vnv" href="#vnv" data-target="vnv">Custom
+                Verification &amp; Validation Solutions</a>
+        </div>
+    </main>
+
+    <div class="info-block">
+        <div class="info-panel is-active" id="panel-key-products">
+            <h3>Key products</h3>
+            <p>FPGA/ASIC IP cores, high-speed interfaces, protocol stacks, reference designs.</p>
+            <ul>
+                <li>PCIe Gen4/5, Ethernet 100G/400G</li>
+                <li>DDR4/DDR5 контроллеры и PHY</li>
+                <li>Ready-to-deploy evaluation kits</li>
+            </ul>
+        </div>
+
+        <div class="info-panel" id="panel-ai-optimization" hidden>
+            <h3>AI Optimization Solutions</h3>
+            <p>Оптимизация моделей: quantization, pruning, профилирование.</p>
+            <ul>
+                <li>INT8/FP16 pipelines</li>
+                <li>Auto-scheduling на FPGA/GPU</li>
+                <li>Profiling & bottleneck analysis</li>
+            </ul>
+        </div>
+
+        <div class="info-panel" id="panel-vnv" hidden>
+            <h3>Custom Verification & Validation</h3>
+            <p>UVM testbenches, coverage-driven verification, CI regression.</p>
+            <ul>
+                <li>SystemVerilog UVM, SVA</li>
+                <li>Emulation & prototyping flows</li>
+                <li>Compliance & interoperability labs</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.hero-btn');
+            const panels = document.querySelectorAll('.info-panel');
+
+            function showPanel(id) {
+                buttons.forEach(btn => {
+                    btn.classList.toggle('is-active', btn.dataset.target === id);
+                });
+                panels.forEach(p => {
+                    const active = p.id === 'panel-' + id;
+                    p.hidden = !active;
+                    p.classList.toggle('is-active', active);
+                });
+            }
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    showPanel(btn.dataset.target);
+                });
+            });
+
+            // старт по первой кнопке
+            showPanel('key-products');
+        });
+    </script>
+
+    
+    {% endblock content %}
