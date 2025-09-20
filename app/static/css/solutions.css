@@ -9,14 +9,14 @@
 .card-container {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     gap: 25px;
     margin: 110px auto;
 }
 
 .card2 {
-    width: 230px;
-    height: 320px;
+    width: 250px;
+    height: 380px;
     border-radius: 20px;
     background: #e4b0fba8;
     position: relative;
@@ -337,3 +337,4 @@
         background-size: 300% 300%;
     }
 }
+
