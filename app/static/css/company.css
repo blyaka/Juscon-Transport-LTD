@@ -291,7 +291,7 @@
 
 .contact-text {
     flex: 1;
-    color: #b996e4ed;
+    color: #c19fea;
     font-family: var(--font-family-text);
 }
 
@@ -306,7 +306,7 @@
     font-size: 32px;
     line-height: 1.4;
     font-weight: 700;
-    color: #20003c;
+    color: #1c004f;
 }
 
 

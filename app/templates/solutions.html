@@ -4,7 +4,9 @@
 
 {% block content %}
 
+
 <div class="solutions-wrapper">
+
     <div class="card-container">
 
         <div class="card2">
@@ -22,6 +24,7 @@
             <button class="card-button" onclick="openPopup('popup_2')">Learn more</button>
         </div>
 
+
         <div class="card2">
             <div class="card-details">
                 <p class="text-title">Custom Verification & Validation Solutions</p>
@@ -30,6 +33,8 @@
         </div>
 
     </div>
+
+
 
 
     <svg class="contact-blob2" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
@@ -51,167 +56,384 @@
             d="M 1200,0 H 0 V 700 C 220,690 109.77385,490.08243 169.77385,400.08243 229.77385,310.08243 500,360 610,330 730,300 669.05363,112.18124 779.05363,82.18124 879.05363,52.18124 1120,210 1200,150 Z" />
 
     </svg>
+
+
 </div>
 
 
+
+
 <div class="popup-overlay" id="popup_1">
+
     <div class="popup popup--split" role="dialog" aria-modal="true" aria-labelledby="p1_title">
         <button class="close-button" onclick="closePopup('popup_1')" aria-label="Close">×</button>
 
         <div class="popup-split">
 
             <nav class="popup-menu" id="p1_menu" aria-label="Products">
-                <button class="menu-item active" data-target="p1-analytics">Analytics Suite</button>
-                <button class="menu-item" data-target="p1-mlops">MLOps Platform</button>
-                <button class="menu-item" data-target="p1-forecast">Forecast Engine</button>
-                <button class="menu-item" data-target="p1-routing">Routing & Logistics</button>
-                <button class="menu-item" data-target="p1-docs">Docs Automation</button>
-                <button class="menu-item" data-target="p1-security">AI Security</button>
-                <button class="menu-item active" data-target="p1-analytics">Analytics Suite</button>
-                <button class="menu-item" data-target="p1-mlops">MLOps Platform</button>
-                <button class="menu-item" data-target="p1-forecast">Forecast Engine</button>
-                <button class="menu-item" data-target="p1-routing">Routing & Logistics</button>
-                <button class="menu-item" data-target="p1-docs">Docs Automation</button>
+                <button class="menu-item active" data-target="p1">AMBA Fabric</button>
+                <button class="menu-item" data-target="p2">Duet TSMC 12FFC</button>
+                <button class="menu-item" data-target="p3">Duet TSMC 12FFC HPC Kit</button>
+                <button class="menu-item" data-target="p4">E32 PHY NS TSMC12FFC X4</button>
+                <button class="menu-item" data-target="p5">Ethernet Enterprise XLGMAC</button>
+                <button class="menu-item" data-target="p6">Ethernet Enterprise XLGPCS</button>
+                <button class="menu-item" data-target="p7">NVM OT XBC TS12FFC_1p8</button>
+                <button class="menu-item" data-target="p8">Sensors PD TSMC 12FFC </button>
+                <button class="menu-item" data-target="p9">Sensors PVT-C Series 3+ TSMC 12FFC </button>
+                <button class="menu-item" data-target="p10">Sensors TS TSMC 12FFC </button>
+                <button class="menu-item" data-target="p11"> Sensors VM TSMC 12FFC</button>
             </nav>
 
 
             <section class="popup-body" id="p1_body">
-                <h2 id="p1_title">Key products</h2>
 
-                <article class="pane show" id="p1-analytics">
-                    <h3>Analytics Suite</h3>
-                    <p>End-to-end BI: dashboards, cohorts, anomaly detection.</p>
-                    <ul>
-                        <li>Real-time + batch</li>
-                        <li>RBAC, CSV/XLSX export</li>
-                        <li>ERP/CRM API hooks</li>
+                <h2 class="popup-title">Key products</h2>
+
+
+
+                <article class="pane show" id="p1">
+
+                    <h3 class="section-title">Key Directions</h3>
+
+                    <ul class="fancy-list">
+                        <li>AMBA 2.0 AHB protocol compliant </li>
+                        <li>High-performance, low-latency interconnect for SoC</li>
+                        <li>Configurable arbitration (priority, fair, weighted token)</li>
+                        <li>Flexible clocking options: synchronous, asynchronous, quasi-synchronous</li>
+                        <li>Area and power optimization with hybrid AXI connectivity </li>
+                        <li>Memory management: remapping, contiguous/non-contiguous regions </li>
+                        <li>AMBA-lite mode for compact single-manager systems</li>
+                    </ul>
+                    <h3 class="section-title">Benefits</h3>
+                    <ul class="fancy-list">
+                        <li>Scalable system integration across various SoC types</li>
+                        <li>Reliable, high-throughput data transport</li>
+                        <li>Advanced protocol features for robust testing and debugging</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="pane show" id="p2">
+                    <h3 class="section-title">Core Capabilities</h3>
+                    <ul class="fancy-list">
+                        <li>High-density standard cell libraries for TSMC 12nm FinFET</li>
+                        <li>Integrated SRAM/ROM/register files</li>
+                        <li>Memory test and repair functions</li>
+                        <li>Multi-mode power management (sleep, deep sleep, shutdown)</li>
+                        <li>Yield-optimized cell options (multiple Vt and channel lengths)</li>
+                    </ul>
+                    <h3 class="section-title">Use Cases</h3>
+                    <ul class="fancy-list">
+                        <li>Foundation IP for efficient, scalable SoC production</li>
+                        <li>Mass manufacturing with improved cost and manufacturability</li>
                     </ul>
                 </article>
 
-                <article class="pane" id="p1-mlops">
-                    <h3>MLOps Platform</h3>
-                    <p>CI/CD for models, registry, canary/AB, monitoring.</p>
-                    <ul>
-                        <li>Versioning</li>
-                        <li>Drift/latency/SLA</li>
-                        <li>1-click rollback</li>
+
+                <article class="pane show" id="p3">
+                    <h3 class="section-title">Highlights</h3>
+                    <ul class="fancy-list">
+                        <li>High-speed, high-density memories and logic libraries </li>
+                        <li>Integrated SRAM/ROM/register files</li>
+                        <li>Enables 39% power reduction, 10% area reduction, 7% performance boost</li>
+                        <li>Optimized for vector DSPs and CNN engines</li>
+                        <li>Reference scripts and expert design services included</li>
+                    </ul>
+                    <h3 class="section-title">Why Choose</h3>
+                    <ul class="fancy-list">
+                        <li>Maximum frequency optimization for demanding compute workloads </li>
+                        <li>Multi-foundry compatibility for broad design flexibility</li>
                     </ul>
                 </article>
 
-                <article class="pane" id="p1-forecast">
-                    <h3>Forecast Engine</h3>
-                    <p>Demand/pricing/inventory with scenarios & intervals.</p>
+
+                <article class="pane show" id="p4">
+                    <h3 class="section-title">Technical Features</h3>
+                    <ul class="fancy-list">
+                        <li>1.25–32 Gbps signaling across 4 lanes (scalable via aggregation)</li>
+                        <li>Multi-protocol: PCIe 5.0, Ethernet (1G–400G), CXL, CCIX, SATA</li>
+                        <li>Advanced signal integrity: CTLE, DFE, FFE equalization </li>
+                        <li>Built-in BERT and internal eye monitor for diagnostics</li>
+                    </ul>
+                    <h3 class="section-title">Power Management</h3>
+                    <ul class="fancy-list">
+                        <li>Spread Spectrum Clocking (SSC)</li>
+                        <li>Energy-Efficient Ethernet (EEE) support</li>
+                    </ul>
                 </article>
 
-                <article class="pane" id="p1-routing">
-                    <h3>Routing & Logistics</h3>
-                    <p>VRP/VRPTW, multi-depot, traffic/windows/capacity.</p>
+
+                <article class="pane show" id="p5">
+                    <h3 class="section-title">Functionality</h3>
+                    <ul class="fancy-list">
+                        <li>IEEE 802.3 compliant for up to 100G </li>
+                        <li>Integration options: native, transaction layer, AXI subsystem</li>
+                        <li>VLAN tag detection, CSMA/CD, flow control, RMON counters</li>
+                    </ul>
+                    <h3 class="section-title">Advanced Networking </h3>
+                    <ul class="fancy-list">
+                        <li>Power management: EEE, Wake-on-LAN</li>
+                        <li>TCP/IP checksum offload, IEEE 1588 time stamping</li>
+                        <li>Flexible address filtering for enterprise security</li>
+                    </ul>
                 </article>
 
-                <article class="pane" id="p1-docs">
-                    <h3>Docs Automation</h3>
-                    <p>Specs, reports, test plans. PDF/DOCX/HTML.</p>
+                <article class="pane show" id="p6">
+                    <h3 class="section-title">Principal Attributes</h3>
+                    <ul class="fancy-list">
+                        <li>Complete PCS/MAC-to-Physical medium attachment</li>
+                        <li>IEEE 802.3 and 25G Consortium compliance (10–100G links)</li>
+                        <li>Auto-negotiation and link training with robust FEC</li>
+                        <li>APB3 host interface integration</li>
+                    </ul>
+                    <h3 class="section-title">Deployment</h3>
+                    <ul class="fancy-list">
+                        <li>Multi-rate and multi-standard Ethernet compatibility</li>
+                        <li>Hardware and software verification features</li>
+                    </ul>
                 </article>
 
-                <article class="pane" id="p1-security">
-                    <h3>AI Security</h3>
-                    <p>Threat modeling, hardening, audits, compliance.</p>
+                <article class="pane show" id="p7">
+                    <h3 class="section-title">Innovative Design</h3>
+                    <ul class="fancy-list">
+                        <li>Antifuse-based OTP memory in standard 12nm CMOS</li>
+                        <li>Configurable up to 256K bits for keys, config, trimming, calibration</li>
+                        <li>Guaranteed 10+ years data retention</li>
+                    </ul>
+                    <h3 class="section-title">Security & Reliability </h3>
+                    <ul class="fancy-list">
+                        <li>Intrinsic physical security (reverse-engineering resistant)</li>
+                        <li>JEDEC/JESD standards qualified</li>
+                        <li>Built-in production test modes</li>
+                    </ul>
+                </article>
+
+
+                <article class="pane show" id="p8">
+                    <h3 class="section-title">Protective Functions</h3>
+                    <ul class="fancy-list">
+                        <li>Secondary ESD protection for voltage monitoring circuits</li>
+                        <li>Robust design for automotive and industrial SoCs</li>
+                    </ul>
+                    <h3 class="section-title">Reliability</h3>
+                    <ul class="fancy-list">
+                        <li>Enhanced immunity to ESD events</li>
+                        <li>Critical for long-lifetime device applications</li>
+                    </ul>
+                </article>
+
+
+                <article class="pane show" id="p9">
+                    <h3 class="section-title">Capabilities</h3>
+                    <ul class="fancy-list">
+                        <li>Real-time process, voltage, temperature monitoring </li>
+                        <li>Foundation for Synopsys SLM analytics platform</li>
+                    </ul>
+                    <h3 class="section-title">For Designers</h3>
+                    <ul class="fancy-list">
+                        <li>Enables adaptive voltage/frequency scaling</li>
+                        <li>Improves yield, reliability, predictive maintenance</li>
+                        <li>Silicon lifecycle management integration</li>
+                    </ul>
+                </article>
+
+
+
+                <article class="pane show" id="p10">
+                    <h3 class="section-title">Temperature Monitoring</h3>
+                    <ul class="fancy-list">
+                        <li>High-precision, low-power thermal sensor</li>
+                        <li>Real-time analytics for embedded system safety</li>
+                    </ul>
+                    <h3 class="section-title">System Integration</h3>
+                    <ul class="fancy-list">
+                        <li>Supports adaptive power and reliability control</li>
+                        <li>Suitable for mobile to server applications</li>
+                    </ul>
+                </article>
+
+
+
+
+                <article class="pane show" id="p11">
+                    <h3 class="section-title">Voltage Assurance</h3>
+                    <ul class="fancy-list">
+                        <li>Standalone voltage monitor for SoC core logic</li>
+                        <li>IR-drop analysis and voltage fluctuation detection</li>
+                    </ul>
+                    <h3 class="section-title">Optimization</h3>
+                    <ul class="fancy-list">
+                        <li>Real-time feedback to power management systems</li>
+                        <li>Supports DVFS/AVS for dynamic performance control</li>
+                        <li>Critical data for silicon lifecycle analytics</li>
+                    </ul>
                 </article>
             </section>
+
         </div>
     </div>
 </div>
+
+
+
+
 
 <div class="popup-overlay" id="popup_2">
-    <div class="popup popup--content">
-        <button class="close-button" onclick="closePopup('popup_2')">×</button>
 
-        <h2 class="popup-title">AI Optimization Solutions</h2>
+    <div class="popup popup--content" role="dialog" aria-modal="true" aria-labelledby="p2_title">
+        <button class="close-button" onclick="closePopup('popup_2')" aria-label="Close">×</button>
 
-        <div class="popup-section">
-            <h3 class="section-title">Key Directions</h3>
-            <ul class="fancy-list">
-                <li>Automated data analysis and workflow efficiency tools powered by <span>machine learning</span> and
-                    <span>deep learning</span>
-                </li>
-                <li>Intelligent forecasting, scenario modeling, and <span>business process optimization</span></li>
-                <li>AI-based solutions for demand prediction, logistics routing, and <span>resource allocation</span>
-                </li>
-                <li><span>Hyper-personalization</span> technologies for marketing, sales, and customer engagement</li>
-                <li>AI-driven cybersecurity for proactive threat detection and risk management</li>
-                <li>Autonomous data-driven decision-making platforms</li>
-                <li>Tools for automating documentation and technical content creation (code, analytics, reporting)</li>
-                <li>Seamless integration of AI with existing BI and enterprise analytics systems</li>
-            </ul>
-        </div>
+        <section class="popup-body">
+
+            <h2 class="popup-title" id="p2_title">AI Optimization Solutions</h2>
+
+
+            <div class="popup-section">
+
+                <h3 class="section-title">Key Directions</h3>
+
+                <ul class="fancy-list">
+                    <li>Automated data analysis and workflow efficiency tools powered by machine learning and deep
+                        learning
+                    </li>
+                    <li>Intelligent forecasting, scenario modeling, and business process optimization</li>
+                    <li>AI-based solutions for demand prediction, logistics routing, and resource allocation
+                    </li>
+                    <li>Hyper-personalization technologies for marketing, sales, and customer engagement</li>
+                    <li>AI-driven cybersecurity for proactive threat detection and risk management</li>
+                    <li>Autonomous data-driven decision-making platforms</li>
+                    <li>Tools for automating documentation and technical content creation (code, analytics, reporting)
+                    </li>
+                    <li>Seamless integration of AI with existing BI and enterprise analytics systems</li>
+                </ul>
+
+                <h3 class="section-title">Benefits</h3>
+
+                <ul class="fancy-list">
+                    <li>Significant cost and time savings due to process automation and reduced manual labor</span>
+                    </li>
+                    <li>Enhanced accuracy and speed of critical business decisions</li>
+                    <li>Increased flexibility, adaptability, and scalability of operations</li>
+                    <li>Improved customer satisfaction and retention through targeted personalization</li>
+                    <li>Future-proof infrastructure supporting rapid adaptation to market and technology shifts</li>
+                </ul>
+
+
+            </div>
+        </section>
     </div>
 </div>
+
+
+
 
 
 <div class="popup-overlay" id="popup_3">
-    <div class="popup">
-        <button class="close-button" onclick="closePopup('popup_3')">×</button>
-        <div class="popup-content">
-            <h2>Custom Verification & Validation Solutions</h2>
-            <p>MAIN COMPONENTS:</p>
-            <ul>
-                <li>• AI-powered test automation for functional, regression, and load testing of hardware and software
-                    systems</li>
-                <li>• Scalable frameworks supporting both pre-silicon simulation and hardware-assisted verification</li>
-                <li>• User-defined validation metrics, customizable for enterprise workflows and industry requirements
-                <li>• Real-time monitoring, detailed logging, and analytics, for deep traceability and compliance
-                    reporting</li>
-                <li>• Comprehensive security validation, including penetration testing and cybersecurity threat
-                    detection
-                </li>
-                <li>• Model validation tools measuring accuracy, performance, and reproducibility across hardware and
-                    datasets</li>
-                <li>• Continuous integration with enterprise delivery pipelines and legacy verification environments
-                </li>
-                <li>• Application-specific extendability, including support for automotive, medical, telecom, financial,
-                    and cloud sectors</li>
 
-            </ul>
-            <p>VALUE DELIVERED:</p>
-            <ul>
-                <li>• Faster product launches, reduced cost overruns, and robust post-deployment stability</li>
-                <li>• Automated framework enables rapid scaling of projects from proof-of-concept to full production
-                </li>
-                <li>• Flexible architecture: microservices, APIs, and modular integration with existing infrastructure
-                </li>
-                <li>• Reliable certification</li>
-            </ul>
-        </div>
+    <div class="popup popup--content" role="dialog" aria-modal="true" aria-labelledby="p3_title">
+        <button class="close-button" onclick="closePopup('popup_3')" aria-label="Close">×</button>
+
+        <section class="popup-body">
+
+            <h2 class="popup-title" id="p3_title">AI Optimization Solutions</h2>
+
+            <div class="popup-section">
+
+                <h3 class="section-title">Main Components:</h3>
+
+                <ul class="fancy-list">
+
+                    <li>AI-powered test automation for functional, regression, and load testing of hardware and software
+                        systems
+                    </li>
+                    <li>Scalable frameworks supporting both pre-silicon simulation and hardware-assisted verification
+                    </li>
+                    <li>User-defined validation metrics, customizable for enterprise workflows and industry requirements
+                    </li>
+                    <li>Real-time monitoring, detailed logging, and analytics, for deep traceability and compliance
+                        reporting</li>
+                    <li>Comprehensive security validation, including penetration testing and cybersecurity threat
+                        detection
+                    </li>
+                    <li>Model validation tools measuring accuracy, performance, and reproducibility across hardware and
+                        datasets</li>
+                    <li>Continuous integration with enterprise delivery pipelines and legacy verification environments
+                    </li>
+                    <li>Application-specific extendability, including support for automotive, medical, telecom,
+                        financial,
+                        and cloud sectors</li>
+                </ul>
+                <h3 class="section-title">Value Delivered:</h3>
+
+                <ul class="fancy-list">
+                    <li>Faster product launches, reduced cost overruns, and robust post-deployment stability</li>
+                    <li>Automated framework enables rapid scaling of projects from proof-of-concept to full production
+                    </li>
+                    <li>Flexible architecture: microservices, APIs, and modular integration with existing infrastructure
+                    </li>
+                    <li>Reliable certification and </li>
+                </ul>
+            </div>
+
+
+        </section>
+
     </div>
 </div>
 
+
+
+
+
+
+
+
 <script>
-    function openPopup(id) { document.getElementById(id).style.display = 'flex'; }
+    function openPopup(id) {
+        const popup = document.getElementById(id);
+        if (!popup) return;
+        popup.style.display = 'flex';
+
+        const menu = popup.querySelector('.popup-menu');
+        const body = popup.querySelector('.popup-body');
+        if (menu && body) {
+            const firstBtn = menu.querySelector('.menu-item');
+            if (firstBtn) {
+                menu.querySelectorAll('.menu-item').forEach(b => b.classList.remove('active'));
+                firstBtn.classList.add('active');
+
+
+                body.querySelectorAll('.pane').forEach(p => p.classList.remove('show'));
+                const firstId = firstBtn.dataset.target;
+                const firstPane = body.querySelector('#' + firstId);
+                if (firstPane) firstPane.classList.add('show');
+            }
+        }
+    }
+
     function closePopup(id) { document.getElementById(id).style.display = 'none'; }
 
     (function () {
-        const menu = document.getElementById('p1_menu');
-        if (!menu) return;
+        const split = document.querySelector('#popup_1 .popup-split');
+        if (!split) return;
+        const menu = split.querySelector('.popup-menu');
+        const body = split.querySelector('.popup-body');
 
-        menu.addEventListener('click', (e) => {
+        menu.addEventListener('click', e => {
             const btn = e.target.closest('.menu-item');
             if (!btn) return;
 
-            // подсветка
+            // активное состояние слева
             menu.querySelectorAll('.menu-item').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // переключение панелей
+            // показываем только выбранную панель
             const id = btn.dataset.target;
-            document.querySelectorAll('#p1_body .pane').forEach(p => p.classList.remove('show'));
-            const pane = document.getElementById(id);
-            if (pane) pane.classList.add('show');
+            body.querySelectorAll('.pane').forEach(p => p.classList.remove('show'));
+            const pane = body.querySelector('#' + id);
+            if (pane) { pane.classList.add('show'); body.scrollTop = 0; }
         });
-
-        // клик по фону и ESC для закрытия
-        const overlay = document.getElementById('popup_1');
-        overlay.addEventListener('click', (e) => { if (e.target.id === 'popup_1') closePopup('popup_1'); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup('popup_1'); });
     })();
 </script>
 
