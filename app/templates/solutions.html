@@ -29,69 +29,119 @@
             <button class="card-button" onclick="openPopup('popup_3')">Learn more</button>
         </div>
 
-
-        <svg class="contact-blob2" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
-
-            <defs>
-                <linearGradient id="blobGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#3a0ca3" />
-                    <stop offset="50%" stop-color="#7209b7" />
-                    <stop offset="100%" stop-color="#4361ee" />
-
-                    <animate attributeName="x1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
-                    <animate attributeName="y1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
-                    <animate attributeName="x2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
-                    <animate attributeName="y2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
-                </linearGradient>
-            </defs>
-
-            <path fill="url(#blobGrad2)"
-                d="M 1200,0 H 0 V 700 C 220,690 109.77385,490.08243 169.77385,400.08243 229.77385,310.08243 500,360 610,330 730,300 669.05363,112.18124 779.05363,82.18124 879.05363,52.18124 1120,210 1200,150 Z" />
-
-        </svg>
-
     </div>
+
+
+    <svg class="contact-blob2" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
+
+        <defs>
+            <linearGradient id="blobGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#3a0ca3" />
+                <stop offset="50%" stop-color="#7209b7" />
+                <stop offset="100%" stop-color="#4361ee" />
+
+                <animate attributeName="x1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="y1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="x2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="y2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+            </linearGradient>
+        </defs>
+
+        <path fill="url(#blobGrad2)"
+            d="M 1200,0 H 0 V 700 C 220,690 109.77385,490.08243 169.77385,400.08243 229.77385,310.08243 500,360 610,330 730,300 669.05363,112.18124 779.05363,82.18124 879.05363,52.18124 1120,210 1200,150 Z" />
+
+    </svg>
 </div>
 
 
 <div class="popup-overlay" id="popup_1">
-    <div class="popup">
-        <button class="close-button" onclick="closePopup('popup_1')">×</button>
-        <div class="popup-content">
-            <h2>Информация о продукте</h2>
-            <ul>
-            </ul>
+    <div class="popup popup--split" role="dialog" aria-modal="true" aria-labelledby="p1_title">
+        <button class="close-button" onclick="closePopup('popup_1')" aria-label="Close">×</button>
+
+        <div class="popup-split">
+
+            <nav class="popup-menu" id="p1_menu" aria-label="Products">
+                <button class="menu-item active" data-target="p1-analytics">Analytics Suite</button>
+                <button class="menu-item" data-target="p1-mlops">MLOps Platform</button>
+                <button class="menu-item" data-target="p1-forecast">Forecast Engine</button>
+                <button class="menu-item" data-target="p1-routing">Routing & Logistics</button>
+                <button class="menu-item" data-target="p1-docs">Docs Automation</button>
+                <button class="menu-item" data-target="p1-security">AI Security</button>
+                <button class="menu-item active" data-target="p1-analytics">Analytics Suite</button>
+                <button class="menu-item" data-target="p1-mlops">MLOps Platform</button>
+                <button class="menu-item" data-target="p1-forecast">Forecast Engine</button>
+                <button class="menu-item" data-target="p1-routing">Routing & Logistics</button>
+                <button class="menu-item" data-target="p1-docs">Docs Automation</button>
+            </nav>
+
+
+            <section class="popup-body" id="p1_body">
+                <h2 id="p1_title">Key products</h2>
+
+                <article class="pane show" id="p1-analytics">
+                    <h3>Analytics Suite</h3>
+                    <p>End-to-end BI: dashboards, cohorts, anomaly detection.</p>
+                    <ul>
+                        <li>Real-time + batch</li>
+                        <li>RBAC, CSV/XLSX export</li>
+                        <li>ERP/CRM API hooks</li>
+                    </ul>
+                </article>
+
+                <article class="pane" id="p1-mlops">
+                    <h3>MLOps Platform</h3>
+                    <p>CI/CD for models, registry, canary/AB, monitoring.</p>
+                    <ul>
+                        <li>Versioning</li>
+                        <li>Drift/latency/SLA</li>
+                        <li>1-click rollback</li>
+                    </ul>
+                </article>
+
+                <article class="pane" id="p1-forecast">
+                    <h3>Forecast Engine</h3>
+                    <p>Demand/pricing/inventory with scenarios & intervals.</p>
+                </article>
+
+                <article class="pane" id="p1-routing">
+                    <h3>Routing & Logistics</h3>
+                    <p>VRP/VRPTW, multi-depot, traffic/windows/capacity.</p>
+                </article>
+
+                <article class="pane" id="p1-docs">
+                    <h3>Docs Automation</h3>
+                    <p>Specs, reports, test plans. PDF/DOCX/HTML.</p>
+                </article>
+
+                <article class="pane" id="p1-security">
+                    <h3>AI Security</h3>
+                    <p>Threat modeling, hardening, audits, compliance.</p>
+                </article>
+            </section>
         </div>
     </div>
 </div>
 
-
 <div class="popup-overlay" id="popup_2">
-    <div class="popup">
+    <div class="popup popup--content">
         <button class="close-button" onclick="closePopup('popup_2')">×</button>
-        <div class="popup-content">
-            <h2>AI Optimization Solutions</h2>
-            <p>KEY DIRECTIONS:</p>
-            <ul>
-                <li>• Automated data analysis and workflow efficiency tools powered by machine learning and deep
-                    learning
+
+        <h2 class="popup-title">AI Optimization Solutions</h2>
+
+        <div class="popup-section">
+            <h3 class="section-title">Key Directions</h3>
+            <ul class="fancy-list">
+                <li>Automated data analysis and workflow efficiency tools powered by <span>machine learning</span> and
+                    <span>deep learning</span>
                 </li>
-                <li>• Intelligent forecasting, scenario modeling, and business process optimization</li>
-                <li>• AI-based solutions for demand prediction, logistics routing, and resource allocation</li>
-                <li>• Hyper-personalization technologies for marketing, sales, and customer engagement</li>
-                <li>• AI-driven cybersecurity for proactive threat detection and risk management</li>
-                <li>• Autonomous data-driven decision-making platforms</li>
-                <li>• Tools for automating documentation and technical content creation (including code, analytics, and
-                    reporting) </li>
-                <li>• Seamless integration of AI with existing BI and enterprise analytics systems</li>
-            </ul>
-            <p>BENEFITS:</p>
-            <ul>
-                <li>• Significant cost and time savings due to process automation and reduced manual labor</li>
-                <li>• Enhanced accuracy and speed of critical business decisions</li>
-                <li>• Increased flexibility, adaptability, and scalability of operations</li>
-                <li>• Improved customer satisfaction and retention through targeted personalization</li>
-                <li>• Future-proof infrastructure supporting rapid adaptation to market and technology shifts</li>
+                <li>Intelligent forecasting, scenario modeling, and <span>business process optimization</span></li>
+                <li>AI-based solutions for demand prediction, logistics routing, and <span>resource allocation</span>
+                </li>
+                <li><span>Hyper-personalization</span> technologies for marketing, sales, and customer engagement</li>
+                <li>AI-driven cybersecurity for proactive threat detection and risk management</li>
+                <li>Autonomous data-driven decision-making platforms</li>
+                <li>Tools for automating documentation and technical content creation (code, analytics, reporting)</li>
+                <li>Seamless integration of AI with existing BI and enterprise analytics systems</li>
             </ul>
         </div>
     </div>
@@ -136,13 +186,34 @@
 </div>
 
 <script>
-    function openPopup(popupId) {
-        document.getElementById(popupId).style.display = 'flex';
-    }
+    function openPopup(id) { document.getElementById(id).style.display = 'flex'; }
+    function closePopup(id) { document.getElementById(id).style.display = 'none'; }
 
-    function closePopup(popupId) {
-        document.getElementById(popupId).style.display = 'none';
-    }
+    (function () {
+        const menu = document.getElementById('p1_menu');
+        if (!menu) return;
+
+        menu.addEventListener('click', (e) => {
+            const btn = e.target.closest('.menu-item');
+            if (!btn) return;
+
+            // подсветка
+            menu.querySelectorAll('.menu-item').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // переключение панелей
+            const id = btn.dataset.target;
+            document.querySelectorAll('#p1_body .pane').forEach(p => p.classList.remove('show'));
+            const pane = document.getElementById(id);
+            if (pane) pane.classList.add('show');
+        });
+
+        // клик по фону и ESC для закрытия
+        const overlay = document.getElementById('popup_1');
+        overlay.addEventListener('click', (e) => { if (e.target.id === 'popup_1') closePopup('popup_1'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup('popup_1'); });
+    })();
 </script>
+
 
 {% endblock content %}
