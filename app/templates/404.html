@@ -1,1 +1,29 @@
-404
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Page Not Found — 404 | Juscon{% endblock %}
+{% block description %}The page you’re looking for doesn’t exist or was moved.{% endblock %}
+{% block og_title %}404 — Page Not Found{% endblock %}
+{% block og_description %}The page you requested was not found on Juscon.{% endblock %}
+{% block twitter_title %}404 — Page Not Found{% endblock %}
+{% block twitter_desc %}The page you requested was not found on Juscon.{% endblock %}
+
+{% block content %}
+  <section class="error-404">
+    <div class="error-404__inner">
+      <h1 class="error-404__code">404</h1>
+      <p class="error-404__title">Page not found</p>
+      <p class="error-404__text">
+        The page you’re looking for doesn’t exist, was moved, or is temporarily unavailable.
+      </p>
+      <div class="error-404__actions">
+        <a href="{% url 'home' %}" class="cta">Go Home</a>
+        <a href="{% url 'company' %}" class="cta cta--ghost">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_meta %}
+  <meta name="robots" content="noindex, nofollow">
+{% endblock %}

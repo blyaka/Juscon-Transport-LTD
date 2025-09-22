@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/variables.css' %}">
     <link rel="stylesheet" href="{% static 'css/company.css' %}">
     <link rel="stylesheet" href="{% static 'css/solutions.css' %}">
+    <link rel="stylesheet" href="{% static 'css/404.css' %}">
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,6 +35,8 @@
     <meta name="twitter:image" content="{% static 'image/og-image.jpg' %}">
 
     <link rel="canonical" href="https://juscon.net/">
+
+    {% block extra_meta %}{% endblock %}
 
 </head>
 
