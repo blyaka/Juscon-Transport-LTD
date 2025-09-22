@@ -1,6 +1,15 @@
 {% extends '_base.html' %}
 {% load static %}
 
+{% block title %}Juscon — Advanced Silicon & AI Solutions{% endblock %}
+{% block description %}Juscon drives innovation with silicon design, IP solutions, verification & AI optimization.{% endblock %}
+{% block og_title %}Juscon — Advanced Silicon & AI Solutions{% endblock %}
+{% block og_description %}From silicon to systems: AI-powered, scalable, and future-ready solutions.{% endblock %}
+{% block twitter_title %}Juscon — Advanced Silicon & AI Solutions{% endblock %}
+{% block twitter_desc %}Unlock next-gen performance with Juscon’s silicon, AI and system-level solutions.{% endblock %}
+
+
+
 
 {% block content %}
 
@@ -46,7 +55,7 @@
 
         <div class="cards">
 
-            <a class="card">
+            <a class="card" href="{% url 'solutions' %}">
                 <img src="{% static 'image/silicon-design-verification-368x434.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>Advanced Silicon Design & Verification</h3>
@@ -54,7 +63,7 @@
                 </div>
             </a>
 
-            <a class="card">
+            <a class="card" href="{% url 'solutions' %}">
                 <img src="{% static 'image/silicon-ip-368x434.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>IP Solutions</h3>
@@ -62,7 +71,7 @@
                 </div>
             </a>
 
-            <a class="card">
+            <a class="card" href="{% url 'solutions' %}">
                 <img src="{% static 'image/system-design-368x434.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>Verification & Validation</h3>
@@ -70,7 +79,7 @@
                 </div>
             </a>
 
-            <a class="card">
+            <a class="card" href="{% url 'solutions' %}">
                 <img src="{% static 'image/ai-tech-1.webp' %}" alt="AI-Powered Optimization">
                 <div class="card-overlay">
                     <h3>AI-Driven Optimization</h3>
@@ -106,7 +115,7 @@
 
             <div class="duo-grid">
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_1.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Intelligent Silicon Solutions</h4>
@@ -114,7 +123,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card" >
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_6.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>AI-Driven Silicon</h4>
@@ -122,7 +131,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card" >
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_2.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Data Center Acceleration</h4>
@@ -131,7 +140,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_7.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Heterogeneous Multi-Chip Integration</h4>
@@ -139,7 +148,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_3.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Next-Gen Connectivity</h4>
@@ -147,7 +156,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_8.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Green Design Engineering</h4>
@@ -155,7 +164,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_4.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Smart Mobility Systems</h4>
@@ -163,7 +172,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_9.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Advanced Memory Solutions</h4>
@@ -171,7 +180,7 @@
                     </div>
                 </a>
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_5.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Mission-Critical Technologies</h4>
@@ -181,7 +190,7 @@
                 </a>
 
 
-                <a class="duo-card">
+                <a class="duo-card" href="{% url 'solutions' %}">
                     <div class="duo-ico"><img src="{% static 'image/l_10.png' %}" alt=""></div>
                     <div class="duo-body">
                         <h4>Cloud-Ready Development</h4>
@@ -201,7 +210,7 @@
     <section class="cta-section">
         <div class="cta-content">
             <h2>CONNECT WITH US</h2>
-            <a  class="cta_2">Contact Sales</a>
+            <a href="{% url 'company' %}" class="cta_2">Contact Sales</a>
         </div>
     </section>
 

@@ -14,8 +14,28 @@
     <link rel="stylesheet" href="{% static 'css/variables.css' %}">
     <link rel="stylesheet" href="{% static 'css/company.css' %}">
     <link rel="stylesheet" href="{% static 'css/solutions.css' %}">
-</head>
 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}Juscon — Driving Innovation{% endblock %}</title>
+    <meta name="description" content="{% block description %}Juscon provides advanced silicon design, AI-driven optimization, and scalable technology solutions for global innovation.{% endblock %}">
+    <meta name="keywords" content="Juscon, Silicon Design, AI Optimization, Verification, IP Solutions, Technology Innovation">
+
+    <meta property="og:title" content="{% block og_title %}Juscon — Driving Innovation{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Advanced silicon, AI-driven solutions, and scalable architectures powering the future of innovation.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://juscon.net/">
+    <meta property="og:image" content="{% static 'image/p.png' %}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}Juscon — Driving Innovation{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_desc %}Juscon — AI-driven and silicon-based innovation solutions.{% endblock %}">
+    <meta name="twitter:image" content="{% static 'image/og-image.jpg' %}">
+
+    <link rel="canonical" href="https://juscon.net/">
+
+</head>
 
 
 
@@ -38,7 +58,7 @@
 
 
             <nav class="hdr-nav" aria-label="Primary">
-                <a href="#">ABOUT US</a>
+                <a href="{% url 'home' %}">ABOUT US</a>
                 <a href="{% url 'solutions' %}">SOLUTIONS</a>
                 <a href="{% url 'company' %}">COMPANY</a>
             </nav>
@@ -52,7 +72,7 @@
                     <img src="/static/image/2.png" alt="Language icon">
                 </button> -->
 
-                <a class="cta">Contact Sales</a>
+                <a href="{% url 'company' %}" class="cta">Contact Sales</a>
             </div>
 
 
@@ -69,9 +89,9 @@
                 <button class="mnav-close" id="mnavClose" aria-label="Close menu">✕</button>
             </div>
             <nav class="mnav-list" aria-label="Mobile">
-                <a href="#" class="mnav-link">Solutions</a>
-                <a href="#" class="mnav-link">Products</a>
-                <a href="#" class="mnav-link">Company</a>
+                <a href="{% url 'home' %}" class="mnav-link">About us</a>
+                <a href="{% url 'solutions' %}" class="mnav-link">Solutions</a>
+                <a href="{% url 'company' %}" class="mnav-link">Company</a>
             </nav>
             <a href="{% url 'company' %}" class="mnav-cta">Contact Sales</a>
         </div>

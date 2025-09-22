@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "allauth.account",
     'pages',
     'reqs',
+    'django.contrib.sitemaps',
 ]
 
 
