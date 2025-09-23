@@ -433,11 +433,9 @@
             const btn = e.target.closest('.menu-item');
             if (!btn) return;
 
-            // активное состояние слева
             menu.querySelectorAll('.menu-item').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // показываем только выбранную панель
             const id = btn.dataset.target;
             body.querySelectorAll('.pane').forEach(p => p.classList.remove('show'));
             const pane = body.querySelector('#' + id);

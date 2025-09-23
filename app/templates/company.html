@@ -3,11 +3,13 @@
 
 
 {% block title %}About Juscon — Company, Vision & Mission{% endblock %}
-{% block description %}Learn more about Juscon, our mission, expertise, and global vision driving innovation across industries.{% endblock %}
+{% block description %}Learn more about Juscon, our mission, expertise, and global vision driving innovation across
+industries.{% endblock %}
 {% block og_title %}Juscon Company — Empowering Visionaries{% endblock %}
 {% block og_description %}Juscon is shaping the future with advanced technology and scalable solutions.{% endblock %}
 {% block twitter_title %}About Juscon — Driving Innovation{% endblock %}
-{% block twitter_desc %}Discover Juscon’s mission, values and vision — innovation from ideas to implementation.{% endblock %}
+{% block twitter_desc %}Discover Juscon’s mission, values and vision — innovation from ideas to
+implementation.{%endblock %}
 
 
 
@@ -16,187 +18,274 @@
 
 <section class="contact-hero">
 
-    <div class="contact-container">
 
-        <div class="contact-text">
-            <h2>Would you like to learn more about our solutions or discuss the project?</h2>
-            <p>Leave your contacts and we will help you find the best solution</p>
-        </div>
 
-        <svg class="contact-blob" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
+    <svg class="contact-blob" viewBox="0 0 900 650" preserveAspectRatio="none" aria-hidden="true">
 
-            <defs>
-                <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#3a0ca3" />
-                    <stop offset="50%" stop-color="#7209b7" />
-                    <stop offset="100%" stop-color="#4361ee" />
+        <defs>
+            <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#3a0ca3" />
+                <stop offset="50%" stop-color="#7209b7" />
+                <stop offset="100%" stop-color="#4361ee" />
 
-                    <animate attributeName="x1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
-                    <animate attributeName="y1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
-                    <animate attributeName="x2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
-                    <animate attributeName="y2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
-                </linearGradient>
-            </defs>
+                <animate attributeName="x1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="y1" values="0%;20%;0%" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="x2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="y2" values="100%;80%;100%" dur="20s" repeatCount="indefinite" />
+            </linearGradient>
+        </defs>
 
-            <path fill="url(#blobGrad)"
-                d="           M 0,0            H 1200            V 700            C 1000,680 860,620 760,540            C 640,440 500,440 380,480            C 260,520 120,480 0,150            Z" />
-        
-        </svg>
+        <path fill="url(#blobGrad)"
+            d="           M 0,0            H 1200            V 700            C 1000,680 860,620 760,540            C 640,440 500,440 380,480            C 260,520 120,480 0,150            Z" />
+
+    </svg>
 
 
 
+    <div class="content-wrap">
 
-        <div class="feedback-form-wrapper">
 
-            <form class="feedback-form"
-                id="fbForm"
-                action="{% url 'feedback_submit' %}"
-                method="post"
-                novalidate>
-            {% csrf_token %}
 
-            <h2>CONTACT US</h2>
+        <div class="contact-container">
 
-            <div class="form__group field">
-                <input id="name" name="name" type="text" class="form__field" placeholder="Name" required>
-                <label for="name" class="form__label">Name</label>
-                <div class="field-error" data-error-for="name"></div>
+            <div class="contact-text">
+                <h2>Would you like to learn more about our solutions or discuss the project?</h2>
+                <p>Leave your contacts and we will help you find the best solution</p>
             </div>
 
-            <div class="form__group field">
-                <input id="company" name="company" type="text" class="form__field" placeholder="Company" required>
-                <label for="company" class="form__label">Company</label>
-                <div class="field-error" data-error-for="company"></div>
-            </div>
+            <form class="feedback-form" id="fbForm" action="{% url 'feedback_submit' %}" method="post" novalidate>
+                {% csrf_token %}
 
-            <div class="form__group field">
-                <input id="phone" name="phone" type="tel" class="form__field"
-                    placeholder="+7 900 000 00 00"
-                    inputmode="tel"
-                    pattern="^\+7 \d{3} \d{3} \d{2} \d{2}$"
-                    required>
-                <label for="phone" class="form__label">Phone</label>
-                <div class="field-error" data-error-for="phone"></div>
-            </div>
+                <h2>CONTACT US</h2>
 
-            <div class="form__group field">
-                <input id="email" name="email" type="email" class="form__field" placeholder="you@mail.com" required>
-                <label for="email" class="form__label">Email</label>
-                <div class="field-error" data-error-for="email"></div>
-            </div>
+                <div class="form__group field">
+                    <input id="name" name="name" type="text" class="form__field" placeholder="Name" required>
+                    <label for="name" class="form__label">Name</label>
+                    <div class="field-error" data-error-for="name"></div>
+                </div>
 
-            <div class="form__group field">
-                <textarea id="comment" name="comment" class="form__field form__field--ta" placeholder="Comment" rows="1"></textarea>
-                <label for="comment" class="form__label">Comment</label>
-                <div class="field-error" data-error-for="comment"></div>
-            </div>
+                <div class="form__group field">
+                    <input id="company" name="company" type="text" class="form__field" placeholder="Company" required>
+                    <label for="company" class="form__label">Company</label>
+                    <div class="field-error" data-error-for="company"></div>
+                </div>
 
-            <div class="form-consent">
-                <label class="consent-check">
-                <input type="checkbox" name="consent" id="consent" required>
-                <svg viewBox="0 0 64 64" width="20" height="20" aria-hidden="true">
-                    <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
-                        pathLength="575.0541381835938" class="consent-path"></path>
-                </svg>
-                <span>I agree with the <a href="/privacy-policy" target="_blank"><strong>privacy policy</strong></a></span>
-                </label>
-                <div class="field-error" data-error-for="consent"></div>
-            </div>
+                <div class="form__group field">
+                    <input id="phone" name="phone" type="tel" class="form__field" placeholder="+7 900 000 00 00"
+                        inputmode="tel" pattern="^\+7 \d{3} \d{3} \d{2} \d{2}$" required>
+                    <label for="phone" class="form__label">Phone</label>
+                    <div class="field-error" data-error-for="phone"></div>
+                </div>
 
-            <input type="text" name="hp" id="hp" autocomplete="off" tabindex="-1"
+                <div class="form__group field">
+                    <input id="email" name="email" type="email" class="form__field" placeholder="you@mail.com" required>
+                    <label for="email" class="form__label">Email</label>
+                    <div class="field-error" data-error-for="email"></div>
+                </div>
+
+                <div class="form__group field">
+                    <textarea id="comment" name="comment" class="form__field form__field--ta" placeholder="Comment"
+                        rows="1"></textarea>
+                    <label for="comment" class="form__label">Comment</label>
+                    <div class="field-error" data-error-for="comment"></div>
+                </div>
+
+                <div class="form-consent">
+                    <label class="consent-check">
+                        <input type="checkbox" name="consent" id="consent" required>
+                        <svg viewBox="0 0 64 64" width="20" height="20" aria-hidden="true">
+                            <path
+                                d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                                pathLength="575.0541381835938" class="consent-path"></path>
+                        </svg>
+                        <span>I agree with the <a href="/privacy-policy" target="_blank"><strong>privacy
+                                    policy</strong></a></span>
+                    </label>
+                    <div class="field-error" data-error-for="consent"></div>
+                </div>
+
+                <input type="text" name="hp" id="hp" autocomplete="off" tabindex="-1"
                     style="position:absolute;left:-9999px;opacity:0;">
-            <input type="hidden" name="ts" id="ts">
+                <input type="hidden" name="ts" id="ts">
 
-            <div id="fbStatus" class="form__status" aria-live="polite"></div>
+                <div id="fbStatus" class="form__status" aria-live="polite"></div>
 
-            <div class="form__actions">
-                <button type="submit" class="cw-submit" id="fbSubmit">
-                <span class="btn-text">Send</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true">
-                    <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
-                    <path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path>
-                </svg>
-                </button>
-            </div>
+                <div class="form__actions">
+                    <button type="submit" class="cw-submit" id="fbSubmit">
+                        <span class="btn-text">Send</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" aria-hidden="true">
+                            <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                            <path fill="black"
+                                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
             </form>
 
-            <script>
-            const qs = (s, r=document) => r.querySelector(s);
-            const qsa = (s, r=document) => Array.from(r.querySelectorAll(s));
+        </div>
 
-            document.addEventListener('DOMContentLoaded', () => {
-                qs('#ts').value = Math.floor(Date.now()/1000);
-            });
+        <button class="simple-button" onclick="openPopup()">
+            DETAILS
+        </button>
 
-            function setStatus(msg, type='info') {
-                const s = qs('#fbStatus');
-                s.textContent = msg || '';
-                s.className = 'form__status ' + (type ? `form__status--${type}` : '');
-            }
+    </div>
 
-            function clearFieldErrors(form) {
-                qsa('.field-error', form).forEach(n => n.textContent = '');
-                qsa('.form__field', form).forEach(n => n.classList.remove('is-invalid'));
-            }
+</section>
 
-            function applyFieldErrors(form, errors) {
-                if (!errors) return;
-                Object.entries(errors).forEach(([name, msgs]) => {
-                const field = qs(`[name="${name}"]`, form);
-                const holder = qs(`.field-error[data-error-for="${name}"]`, form);
-                if (holder) holder.textContent = Array.isArray(msgs) ? msgs.join(' ') : String(msgs);
-                if (field) field.classList.add('is-invalid');
-                });
-            }
 
-            qs('#fbForm').addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const f = e.currentTarget;
-                const btn = qs('#fbSubmit', f);
-                clearFieldErrors(f);
-                setStatus('Sending…', 'info');
 
-                btn.disabled = true;
-                const orig = qs('.btn-text', btn).textContent;
-                qs('.btn-text', btn).textContent = 'Sending…';
 
-                try {
-                const res = await fetch(f.action, {
-                    method: 'POST',
-                    body: new FormData(f),
-                    headers: {'X-Requested-With': 'fetch'}
-                });
-                const data = await res.json().catch(() => ({}));
 
-                if (res.ok && data.ok) {
-                    setStatus('Thank you! Your request has been sent.', 'ok');
-                    f.reset();
-                    qs('#ts').value = Math.floor(Date.now()/1000);
-                } else {
-                    applyFieldErrors(f, data.errors);
-                    const msg = (data.errors && data.errors.__all__) ? data.errors.__all__.join(' ') : 'Submission error. Check the fields.';
-                    setStatus(msg, 'err');
-                }
-                } catch (err) {
-                setStatus('The network is unavailable. Please try again later.', 'err');
-                } finally {
-                btn.disabled = false;
-                qs('.btn-text', btn).textContent = orig;
-                }
-            });
-            </script>
+<div class="popup-overlay" id="popupOverlay">
 
-            <style>
-                .form__status { margin: 8px 0 0; font-size: 14px; min-height: 18px; }
-                .form__status--ok { color: #1a7f37; }
-                .form__status--err { color: #c62828; }
-                .field-error { color: #c62828; font-size: 12px; min-height: 14px; margin-top: 4px; }
-                .form__field.is-invalid { outline: 2px solid #c62828; }
+    <div class="popup-content">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
 
-            </style>
+        <div class="popup-tit">DETAILS</div>
 
+        <div class="popup-info">
+            <label>Company name:</label>
+            <div>Juscon Transport (PTY) LTD</div>
+        </div>
+
+        <div class="popup-info">
+            <label>Address:</label>
+            <address>2444 Skerpdraai new stand Olifanshok, Northern Cape 8450</address>
+        </div>
+
+        <div class="popup-info">
+            <label>E-mail:</label>
+            <a href="">info@mail.ru</a>
         </div>
     </div>
+
+</div>
+
+
+
+
+<script>
+    const qs = (s, r = document) => r.querySelector(s);
+    const qsa = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+    document.addEventListener('DOMContentLoaded', () => {
+        qs('#ts').value = Math.floor(Date.now() / 1000);
+    });
+
+    function setStatus(msg, type = 'info') {
+        const s = qs('#fbStatus');
+        s.textContent = msg || '';
+        s.className = 'form__status ' + (type ? `form__status--${type}` : '');
+    }
+
+    function clearFieldErrors(form) {
+        qsa('.field-error', form).forEach(n => n.textContent = '');
+        qsa('.form__field', form).forEach(n => n.classList.remove('is-invalid'));
+    }
+
+    function applyFieldErrors(form, errors) {
+        if (!errors) return;
+        Object.entries(errors).forEach(([name, msgs]) => {
+            const field = qs(`[name="${name}"]`, form);
+            const holder = qs(`.field-error[data-error-for="${name}"]`, form);
+            if (holder) holder.textContent = Array.isArray(msgs) ? msgs.join(' ') : String(msgs);
+            if (field) field.classList.add('is-invalid');
+        });
+    }
+
+    qs('#fbForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const f = e.currentTarget;
+        const btn = qs('#fbSubmit', f);
+        clearFieldErrors(f);
+        setStatus('Sending…', 'info');
+
+        btn.disabled = true;
+        const orig = qs('.btn-text', btn).textContent;
+        qs('.btn-text', btn).textContent = 'Sending…';
+
+        try {
+            const res = await fetch(f.action, {
+                method: 'POST',
+                body: new FormData(f),
+                headers: { 'X-Requested-With': 'fetch' }
+            });
+            const data = await res.json().catch(() => ({}));
+
+            if (res.ok && data.ok) {
+                setStatus('Thank you! Your request has been sent.', 'ok');
+                f.reset();
+                qs('#ts').value = Math.floor(Date.now() / 1000);
+            } else {
+                applyFieldErrors(f, data.errors);
+                const msg = (data.errors && data.errors.__all__) ? data.errors.__all__.join(' ') : 'Submission error. Check the fields.';
+                setStatus(msg, 'err');
+            }
+        } catch (err) {
+            setStatus('The network is unavailable. Please try again later.', 'err');
+        } finally {
+            btn.disabled = false;
+            qs('.btn-text', btn).textContent = orig;
+        }
+    });
+
+    function openPopup() {
+        const popup = document.getElementById('popupOverlay');
+        if (popup) {
+            popup.style.display = 'flex';
+        }
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('popupOverlay');
+        if (popup) {
+            popup.style.display = 'none';
+        }
+    }
+
+    document.getElementById('popupOverlay').addEventListener('click', function (e) {
+        if (e.target === this) {
+            closePopup();
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closePopup();
+        }
+    });
+</script>
+
+<style>
+    .form__status {
+        margin: 8px 0 0;
+        font-size: 14px;
+        min-height: 18px;
+    }
+
+    .form__status--ok {
+        color: #1a7f37;
+    }
+
+    .form__status--err {
+        color: #c62828;
+    }
+
+    .field-error {
+        color: #c62828;
+        font-size: 12px;
+        min-height: 14px;
+        margin-top: 4px;
+    }
+
+    .form__field.is-invalid {
+        outline: 2px solid #c62828;
+    }
+</style>
+
+</div>
+</div>
 </section>
 
 
